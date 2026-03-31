@@ -25,3 +25,119 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: MMKGC
+      description: 多模态知识图谱补全方向；重点关注结构、文本、图像等多源信息联合建模，跨模态融合与对齐，实体表示学习，链路预测与缺失三元组补全，以及真实场景与细粒度建模方法。
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: cross-modal fusion
+          keyword_cn: 跨模态融合
+          query: cross-modal fusion
+        - keyword: multimodal link prediction
+          keyword_cn: 多模态链路预测
+          query: multimodal link prediction
+        - keyword: multi-modal knowledge graph
+          keyword_cn: 多模态知识图谱
+          query: multi-modal knowledge graph
+        - keyword: multimodal knowledge graph completion
+          keyword_cn: 多模态知识图谱补全
+          query: multimodal knowledge graph completion
+      intent_queries:
+        - query: >-
+            Prioritize top tier conference papers on robust, fine grained, and generalizable multimodal knowledge graph
+            completion
+          query_cn: 优先检索关注鲁棒性、细粒度建模与泛化能力的多模态知识图谱补全顶会论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: >-
+            Find conference papers on multimodal knowledge graph completion that use text, image, and structural
+            information jointly.
+          query_cn: 检索联合使用文本、图像与图结构信息进行多模态知识图谱补全的会议论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: >-
+            Find papers on multimodal entity representation learning and cross modal fusion for knowledge graph
+            completion.
+          query_cn: 检索面向知识图谱补全的多模态实体表示学习与跨模态融合论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: >-
+            Find recent conference papers on multimodal knowledge graph completion for missing link prediction and
+            triple completion.
+          query_cn: 检索多模态知识图谱补全中面向缺失链接预测与三元组补全的近期会议论文
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-03-31T05:32:45.012Z'
+    - tag: MMKGC-LLM
+      description: 多模态知识图谱与大模型/Agent 结合方向；关注 LLM/MLLM 增强的知识图谱补全、图推理、问答、规划与检索增强方法。
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: incomplete knowledge graph reasoning
+          keyword_cn: 不完整知识图谱推理
+          query: incomplete knowledge graph reasoning
+        - keyword: graph augmented llm
+          keyword_cn: 图增强大模型
+          query: graph augmented llm
+        - keyword: kg agent
+          keyword_cn: 知识图谱智能体
+          query: kg agent
+        - keyword: multimodal reasoning with knowledge graph
+          keyword_cn: 基于知识图谱的多模态推理
+          query: multimodal reasoning with knowledge graph
+        - keyword: large language models for knowledge graphs
+          keyword_cn: 面向知识图谱的大语言模型
+          query: large language models for knowledge graphs
+        - keyword: multimodal knowledge graph completion
+          keyword_cn: 多模态知识图谱补全
+          query: multimodal knowledge graph completion
+      intent_queries:
+        - query: >-
+            Prioritize conference papers connecting knowledge graph completion, reasoning, and multimodal large language
+            models.
+          query_cn: 优先检索连接知识图谱补全、知识推理与多模态大模型的会议论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: Find agent style or planning based methods that combine knowledge graphs and large language models.
+          query_cn: 检索结合知识图谱与大语言模型的 agent 式或规划式方法论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: >-
+            Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval
+            augmented generation.
+          query_cn: 检索将多模态知识图谱用于多模态推理、问答或检索增强生成的论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: >-
+            Find conference papers that enhance multimodal knowledge graph reasoning or completion with large language
+            models.
+          query_cn: 检索使用大语言模型增强多模态知识图谱推理或补全的会议论文
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-03-31T05:34:59.394Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
