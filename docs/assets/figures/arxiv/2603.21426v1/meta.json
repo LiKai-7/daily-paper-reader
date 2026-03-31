@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.21426v1/fig-001.webp",
+      "caption": "Figure 4. Training trajectories and dynamic weight evolution for FKL+CE and RKL+CE objectives. The upper row shows the total training loss over steps, and the lower row illustrates the adaptive evolution of task and instance-level uncertainty weights β. The adaptive adjustment of the weighting parameter β during training ensure a faster overall loss convergence and enhances optimization stability.",
+      "page": 6,
+      "index": 1,
+      "width": 455,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21426v1/fig-002.webp",
+      "caption": "Figure 5. Visualization of teacher–student logit distributions at different training stages. Step10 and Step190 denote early and late training checkpoints. Compare with the training steps,",
+      "page": 6,
+      "index": 2,
+      "width": 456,
+      "height": 506
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21426v1/fig-003.webp",
+      "caption": "Table 3. Experimental results of three-loss balancing on the ScienceQA dataset. Each baseline combines Cross-Entropy (CE), a KL-based distillation loss, and a feature-level distillation (FD) objective. Manual uses fixed weights among CE, KL, and FD based on their initial scales. Beta-KD (Task) models task-level uncertainty shared across all samples, while Beta-KD (Instance) models instance-level uncertainty adaptive to each input.",
+      "page": 7,
+      "index": 3,
+      "width": 986,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21426v1/fig-004.webp",
+      "caption": "Table 2. Experimental results of two-loss balancing on the ScienceQA dataset. Each baseline combines Cross-Entropy (CE) with a KL-based distillation loss. Manual uses fixed weights between CE and KL based on their initial scales. Beta-KD (Task) models task-level uncertainty shared across all samples, while Beta-KD (Instance) models instance-level uncertainty adaptive to each input. VQA-Acc denotes the overall question–answering accuracy across all questions, whereas IMG-Acc measures the accuracy on the subset of questions whose explicitly include image inputs. Both strategies consistently enhance knowledge distillation performance across different loss functions.",
+      "page": 7,
+      "index": 4,
+      "width": 1012,
+      "height": 328
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21426v1/fig-005.webp",
+      "caption": "Table 4. Experimental results of the proposed uncertainty weighting framework on multiple benchmarks. MMEA is obtained by dividing MMEP by 20 to align its scale with other benchmarks. The overall average (Avg.) is computed across six datasets: MMEP , GQA, VQAT , POPE, MMBdev, and SQAI . Align-KD’s result is our reproduced result, while Cosine KD means replaces the FKL loss in Align-KD with our proposed probability-space Cosine Distance Matching. Our uncertainty-aware Beta-KD framework further improves both variants, achieving new state-of-the-art performance.",
+      "page": 8,
+      "index": 5,
+      "width": 976,
+      "height": 316
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21426v1/fig-006.webp",
+      "caption": "Figure 3. Visualization of four representative knowledge distillation losses in the probability simplex.",
+      "page": 4,
+      "index": 6,
+      "width": 433,
+      "height": 322
+    }
+  ]
+}

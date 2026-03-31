@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.22136v1/fig-001.webp",
+      "caption": "Figure 4: Relation between natural language statements, formalized statements, tabular statement units, and RDF/OWL-based statement units. (a) A natural language measurement statement with its syntactic positions highlighted. (b) Formalized statement obtained by classifying and generalizing the terms occupying each syntactic position. This formalized statement functions as a metamodel describing the general structure of measurement statements with the highlighted terms describing the position’s semantic roles. (c) Tabular statement unit derived from the formalized statement. Each column corresponds to a semantic role/position of the formalized",
+      "page": 11,
+      "index": 1,
+      "width": 654,
+      "height": 533
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22136v1/fig-002.webp",
+      "caption": "Table 2: Complementary strengths of different knowledge representation paradigms in hybrid AI-knowledge systems.",
+      "page": 25,
+      "index": 2,
+      "width": 942,
+      "height": 239
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22136v1/fig-003.webp",
+      "caption": "Table 1: Typical analytical tasks supported at different levels of semantic formalization in the Semantic Ladder.",
+      "page": 22,
+      "index": 3,
+      "width": 942,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22136v1/fig-004.webp",
+      "caption": "Figure 3: Example of a compound unit, denoted as ‘specimen X item unit’. (a) The RDF-based compound unit. (b) A semantically equivalent implementation as tabular compound unit. Both versions encompass the same set of statement units (A-C) describing specimen X. By virtue of merging the content-graphs or content tables of their associated statement units, compound units only indirectly possess a content-graph or content table. Consequently, compound units only specify meta-graphs (depicted in the peach-coloured box) or meta tables that reference the associated semantic units. Figure adapted from (10).",
+      "page": 10,
+      "index": 4,
+      "width": 943,
+      "height": 491
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22136v1/fig-005.webp",
+      "caption": "Figure 5: Representation-level independence of the Semantic Units Framework. (a) A natural language statement of a mass measurement of a particular specimen X. (b) The same statement represented as a text snippet statement unit. The unit’s content-graph (light-blue box with blue border) carries the semantic content modelled as a natural language string, linked to the unit resource (blue box with purple border) via the data property ‘has text snippet’. The text snippet is vectorized, and the vector is either directly linked to the unit’s resource or indirectly via an identifier, along with all embedding-related metadata (here not shown). Additional metadata include the reference to the source text, if applicable, along with start- and end-offset information to track the original location of the text in the publication. The metadata also indicates that no logical framework was applied for modelling the unit’s content. (c) The formalized language schema that is derived from statement a), in which the subject and object positions have been classified and generalized (e.g., ‘specimen X’ to ‘MATERIAL ENTITY’ and ‘mass’ to ‘QUALITY’). (d) Statement a), modelled as an RDF-based statement unit using the Rosetta Statement approach for modelling semantic content. Rosetta Statement units model the grammatical and syntactical structure of natural language sentences by applying the RDF reification method to the underlying sentence that is potentially n-ary (for Rosetta Statements, see (7)). Representations a)-d) have in common that they model the semantic content based on the structure of natural language: a)-c) use natural language directly and d) models natural language in RDF. (e) The same content as in a) and b), modelled in an OWL-based statement unit. Its content-graph is an OWL graph, with ‘specimen X’ as its subject and ‘mass X’, ‘gram X’, and the numerical value ‘4.96’ as its objects. Contrary to d), the graph aims to be a truthful representation of its real-world referent. d) and e) can be linked to a set of Text Snippet Statement units via the property ‘has associated source reference’. (f) The dynamic label and (g) dynamic graph associated with the measurement statement units d), e), and h) for representing their semantic contents in user interfaces. (h) The same statement modelled as a tabular statement unit. The blue and green arrows indicate the alignment of resource and literal slots across the different models, indicating their semantic equivalence, with the Rosetta Statement schema functioning as a reference schema and thus semantic anchor across all representations. Figure adapted from (18).",
+      "page": 13,
+      "index": 5,
+      "width": 943,
+      "height": 593
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22136v1/fig-006.webp",
+      "caption": "Figure 1: Core structure of a semantic unit, exemplified within an OWL/RDF framework and a tabular/relational framework. (a) A graph-based implementation of a semantic unit, with the unit’s semantic content (meaning-carrying triples not shown) being stored in a Named Graph (32), constituting the unit’s content-graph. The Named Graph’s GUPRI is also the GUPRI of the semantic unit (indicated by the blue arrow). All contextual information relating to the semantic unit itself, including the class it instantiates, its provenance, and other metadata, are stored in the unit’s meta-graph. (b) A tabular- or relational database-based implementation of a semantically equivalent semantic unit. The information from the content-graph of a) is organized in the content table, and the information from the meta-graph in the meta table. Figure adapted from (10).",
+      "page": 8,
+      "index": 6,
+      "width": 943,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22136v1/fig-007.webp",
+      "caption": "Figure 2: From natural language statement to graph and tabular statement unit. (a) A human-readable statement about the mass measurement of specimen X. (b) The representation of the same statement as an OWL-based statement unit, with the semantic content organized within the content-graph (light-blue box with blue border), adhering to RDF syntax and following the established pattern for measurement data from the Ontology of Biomedical Investigations (OBI) (35). The content-graph contains the statement with ‘specimen X’ as its subject and ‘mass X’ and ‘gram X’ alongside the numerical value of 4.96 as its objects. The peach-coloured box depicts the unit’s meta-graph, explicitly denoting the statement unit resource (blue box with purple border) as an instance of the classes SEMUNIT:measurement statement unit and SEMUNIT:assertional statement unit, with ‘specimen X’ identified as the statement’s subject. Note that the GUPRI of the statement unit is also the GUPRI of the semantic unit’s content-graph (indicated by the opaque blue arrow). The meta-graph contains various metadata triples, here only placeholders shown. Highlighted in red within the content-graph is an example of a triple that is required for modelling purposes but lacks semantic meaningfulness for a human user. (c) The semantic content from a) and b), modelled as a tabular statement unit consisting of two tables, i.e., a content and a meta table. In a relational database, a statement unit is documented by a single row in each of these tables. (d) The dynamic label and (e) dynamic graph associated with the statement units from b) and c). The transparent blue and green arrows",
+      "page": 9,
+      "index": 7,
+      "width": 943,
+      "height": 773
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22136v1/fig-008.webp",
+      "caption": "Figure 6: The Semantic Ladder for progressive semantic formalization of data and knowledge: The Semantic Ladder organizes semantic units according to increasing levels of semantic formalization while preserving semantic continuity between representations of the same semantic content. At the lowest level, Text Snippet Units capture natural language statements without formal semantics. Through semantic enrichment (e.g., entity recognition and entity linking to resources such as Wikidata or domain ontologies), text snippets become Semantically Enriched Text Snippet Units, enabling improved search and semantic annotation. Further structuring through statement structuring transforms enriched text into",
+      "page": 16,
+      "index": 8,
+      "width": 943,
+      "height": 579
+    }
+  ]
+}

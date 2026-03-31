@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.21601v1/fig-001.webp",
+      "caption": "Table 1: Capability Matrix of Graph Foundation Models (GFMs) across Diverse Tasks",
+      "page": 2,
+      "index": 1,
+      "width": 1056,
+      "height": 258
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21601v1/fig-002.webp",
+      "caption": "Figure 2: Illustration of parallel transport and vector bundle.",
+      "page": 3,
+      "index": 2,
+      "width": 1027,
+      "height": 202
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21601v1/fig-003.webp",
+      "caption": "Figure 3: An illustration of the road to next-generation graph intelligence.",
+      "page": 4,
+      "index": 3,
+      "width": 1046,
+      "height": 256
+    }
+  ]
+}

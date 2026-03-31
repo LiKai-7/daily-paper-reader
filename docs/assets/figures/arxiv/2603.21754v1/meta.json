@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.21754v1/fig-001.webp",
+      "caption": "Figure 1: (a) Current ICoT: While supporting multimodal inputs and outputs, it suffers from Static Visual Thought Integration, which requires the insertion of visual information after each step, and Broken Visual Thought Representation, in which the inserted visual tokens are lack coherence, resulting in inefficient reasoning. (b) Our DAP-ICOT: It provides Dynamic Visual Thought Integration and Precise Visual Thought Guidance, enabling efficient reasoning.",
+      "page": 1,
+      "index": 1,
+      "width": 500,
+      "height": 515
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21754v1/fig-002.webp",
+      "caption": "Figure 5: A comparison of image insertion frequency and the number of inserted image tokens between DAP-ICOT and ICoT on the Qwen2-VL-7B model.",
+      "page": 6,
+      "index": 2,
+      "width": 492,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21754v1/fig-003.webp",
+      "caption": "Figure 7: Performance comparison across the Confidence Threshold τ range of (0, 1]: Optimal model performance achieved at τ = 0.2, with 57.2% Accuracy in the 0-shot setting and 58.7% in the 1-shot setting, effectively balancing visual integration and textual reasoning.",
+      "page": 6,
+      "index": 3,
+      "width": 496,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21754v1/fig-004.webp",
+      "caption": "Figure 8: The case study. Figure (a) illustrates the reasoning process of the current ICoT, where after each reasoning step, it is necessary to insert image tokens that are most similar to the previous text. However, these tokens are broken image tokens, which ultimately leads to the incorrect answer (D). Figure (b) illustrates our DAP-ICOT. In contrast, DAP-ICOT only inserts images when the text confidence is low. Furthermore, the inserted images are precise and complete, having been segmented using the SAM2 model. After efficient interleaved visual-textual reasoning, the final correct answer (A) is obtained.",
+      "page": 7,
+      "index": 4,
+      "width": 948,
+      "height": 425
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21754v1/fig-005.webp",
+      "caption": "Figure 2: An overview of Interleaved-modal Chain-of-Thought reasoning with Dynamic and Precise Visual Thoughts (DAPICOT), including Dynamic Visual Thought Integration (§), and Precise Visual Thought Guidance (§).",
+      "page": 3,
+      "index": 5,
+      "width": 1010,
+      "height": 406
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21754v1/fig-006.webp",
+      "caption": "Table 1: The main experimental results. Bold indicates the best performance. For the M3CoT and ScienceQA, Acc. is used as the evaluation metric, while for the MME, the sum of the Perception and Cognition scores is used as the evaluation metric.",
+      "page": 4,
+      "index": 6,
+      "width": 1032,
+      "height": 869
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21754v1/fig-007.webp",
+      "caption": "Figure 4: A comparison of the total token consumption between DAP-ICOT and baseline methods on the M3CoT benchmark using the Qwen2-VL-7B. DAP-ICOT achieves a 72.6% reduction in token consumption compared to ICoT.",
+      "page": 5,
+      "index": 7,
+      "width": 479,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2603.21754v1/fig-008.webp",
+      "caption": "Figure 3: Ablation Study on Qwen2-VL-7B: “w/o PVTG” indicates removal of Precise Visual Thought Guidance for Visual Cues, and “w/o DVTI” indicates removal of Dynamic Visual Thought Integration for Adaptive Reasoning",
+      "page": 5,
+      "index": 8,
+      "width": 494,
+      "height": 267
+    }
+  ]
+}
