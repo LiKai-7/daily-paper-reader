@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.22641v1/fig-001.webp",
+      "caption": "Figure 3: Example training data for Q-Tacit. The left part shows the mixture for constructing the latent space in Stage I. The Bboxes field specifies the ROI to supervise latent reconstruction. <lvr> functions as a placeholder to indicate where the latent segment should be inserted, which will expand to a series of latent span <|lvr_start|> <|lvr|>...<|lvr|><|lvr_end|> in practice. The right part is quality-aligned calibration for latent quality reasoning in Stage II.",
+      "page": 6,
+      "index": 1,
+      "width": 823,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22641v1/fig-002.webp",
+      "caption": "Figure 1: Motivation and overview of Q-Tacit. We compare Q-Tacit and Q-Insight [25], which perform quality reasoning in a latent space and a text space, respectively. <|lvr_start|> and <|lvr_end|> encapsulate the latent reasoning process, and <|lvr|> is a placeholder for a latent slot token that allocates one latent reasoning step. Q-Tacit excels at image quality scoring on out-ofdistribution datasets (Right) while requiring only 10% visible token counts compared to Q-Insight (Left).",
+      "page": 2,
+      "index": 2,
+      "width": 822,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22641v1/fig-003.webp",
+      "caption": "Figure 5: Sensitivity to localized distortions. We compare Q-Insight, VisualQuality-R1, and Q-Tacit by reporting predicted quality scores for each image (w/o distorted patch, top) and its counterpart with a localized corruption (w/ distorted patch, bottom). Blur, noise, and compression are injected within the red box (left to right). Q-Tacit consistently lowers its predicted scores in response to the local distortion.",
+      "page": 10,
+      "index": 3,
+      "width": 820,
+      "height": 318
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22641v1/fig-004.webp",
+      "caption": "Table 1: PLCC / SRCC results of NR-IQA models trained on KonIQ-10K. Exceptions marked with † use a multi-task training set in [25] for GRPO calibration. Top two results are highlighted in bold and underlined, respectively.",
+      "page": 8,
+      "index": 4,
+      "width": 825,
+      "height": 735
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22641v1/fig-005.webp",
+      "caption": "Figure 4: Token-space coupling and attention weight distribution during quality scoring: QInsight vs. Q-Tacit. Left/Right: t-SNE visualization of visual and reasoning tokens for Q-Insight/QTacit. Middle: normalized attention weights over the image and reasoning tokens after the quality score is generated. Q-Tacit obtained similar attention allocated to reasoning with only 11 tokens (vs. 112 for Q-Insight).",
+      "page": 9,
+      "index": 5,
+      "width": 825,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22641v1/fig-006.webp",
+      "caption": "Figure 2: Overview of Q-Tacit. We introduce a compact latent quality-reasoning segment wrapped by special tokens <|lvr_start|> and <|lvr_end|>, where the model propagates latent embeddings (i.e., internal hidden states) as a compact quality space instead of generating textual rationales. Then directly outputs the final quality score in <answer> and </answer> when a stopping criterion is met.",
+      "page": 5,
+      "index": 6,
+      "width": 816,
+      "height": 488
+    }
+  ]
+}

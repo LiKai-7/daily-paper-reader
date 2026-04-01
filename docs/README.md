@@ -6,109 +6,91 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-03-31
-- 运行时间：2026-03-31 19:49:11 UTC
+- 最新运行日期：2026-04-01
+- 运行时间：2026-04-01 20:21:39 UTC
 - 运行状态：成功
-- 本次总论文数：29
-- 精读区：17
+- 本次总论文数：23
+- 精读区：11
 - 速读区：12
 
 ### 今日简报（AI）
-今日聚焦 29 篇 AI 前沿进展，重点攻克轻量级大模型在知识图谱上的复杂推理难题。
-满分论文 KG-Hopper 揭示了强化学习赋能小模型的巨大潜力，而图增强技术正深度变革医疗与编程等垂直领域。
-推荐深入探索“知识图谱+强化学习”的组合，以实现更精准、可进化的专业领域决策支持。
-- 详情：[/202603/31/README](/202603/31/README)
+今日深度复盘 23 篇论文，重点突破了动态知识图谱预测与 UniAI-GraphRAG 复杂推理架构。
+满分研究展示了多空间表征在事件预判中的卓越性能，以及双通道融合技术对多跳推理鲁棒性的显著提升。
+推荐关注
+- 详情：[/202604/01/README](/202604/01/README)
 
 ### 精读区论文标签
-1. [KG-Hopper: Empowering Compact Open LLMs with Knowledge Graph Reasoning via Reinforcement Learning](/202603/31/2603.21440v1-kg-hopper-empowering-compact-open-llms-with-knowledge-graph-reasoning-via-reinforcement-learning)  
+1. [DyMRL: Dynamic Multispace Representation Learning for Multimodal Event Forecasting in Knowledge Graph](/202604/01/2603.24636v1-dymrl-dynamic-multispace-representation-learning-for-multimodal-event-forecasting-in-knowledge-graph)  
+   标签：评分：10.0/10、query:mmkgc
+   evidence：知识图谱中的动态多空间表示学习与多模态融合
+2. [UniAI-GraphRAG: Synergizing Ontology-Guided Extraction, Multi-Dimensional Clustering, and Dual-Channel Fusion for Robust Multi-Hop Reasoning](/202604/01/2603.25152v1-uniai-graphrag-synergizing-ontology-guided-extraction-multi-dimensional-clustering-and-dual-channel-fusion-for-robust-multi-hop-reasoning)  
    标签：评分：10.0/10、query:mmkgc-llm
-   evidence：通过强化学习为轻量级大模型提供集成多跳知识图谱推理
-2. [KG-Hopper: Empowering Compact Open LLMs with Knowledge Graph Reasoning via Reinforcement Learning](/202603/31/2603.21440v2-kg-hopper-empowering-compact-open-llms-with-knowledge-graph-reasoning-via-reinforcement-learning)  
+   evidence：本体引导的抽取与GraphRAG用于多跳推理
+3. [GraphWalker: Agentic Knowledge Graph Question Answering via Synthetic Trajectory Curriculum](/202604/01/2603.28533v1-graphwalker-agentic-knowledge-graph-question-answering-via-synthetic-trajectory-curriculum)  
    标签：评分：10.0/10、query:mmkgc-llm
-   evidence：增强大语言模型的多跳知识图谱推理能力
-3. [KG-Hopper: Empowering Compact Open LLMs with Knowledge Graph Reasoning via Reinforcement Learning](/202603/31/2603.21440v3-kg-hopper-empowering-compact-open-llms-with-knowledge-graph-reasoning-via-reinforcement-learning)  
-   标签：评分：10.0/10、query:mmkgc-llm
-   evidence：通过强化学习增强大模型的知识图谱推理
-4. [GAAMA: Graph Augmented Associative Memory for Agents](/202603/31/2603.27910v1-gaama-graph-augmented-associative-memory-for-agents)  
-   标签：评分：10.0/10、query:mmkgc-llm
-   evidence：使用层次化知识图谱的智能体图增强关联记忆
-5. [DomAgent: Leveraging Knowledge Graphs and Case-Based Reasoning for Domain-Specific Code Generation](/202603/31/2603.21430v1-domagent-leveraging-knowledge-graphs-and-case-based-reasoning-for-domain-specific-code-generation)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：利用知识图谱和检索的自主编程代理
-6. [GraphRAG for Engineering Diagrams: ChatP&ID Enables LLM Interaction with P&IDs](/202603/31/2603.22528v1-graphrag-for-engineering-diagrams-chatpid-enables-llm-interaction-with-pids)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：利用结构化知识图谱对工程图纸进行图检索增强生成
-7. [Graph-Aware Late Chunking for Retrieval-Augmented Generation in Biomedical Literature](/202603/31/2603.22633v1-graph-aware-late-chunking-for-retrieval-augmented-generation-in-biomedical-literature)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：将UMLS知识图谱注入检索增强生成
-8. [Mixture of Demonstrations for Textual Graph Understanding and Question Answering](/202603/31/2603.23554v1-mixture-of-demonstrations-for-textual-graph-understanding-and-question-answering)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：用于LLM问答的图检索增强生成
-9. [Knowledge-Guided Manipulation Using Multi-Task Reinforcement Learning](/202603/31/2603.24083v1-knowledge-guided-manipulation-using-multi-task-reinforcement-learning)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：基于知识图谱的多任务强化学习机器人操控
-10. [DyMRL: Dynamic Multispace Representation Learning for Multimodal Event Forecasting in Knowledge Graph](/202603/31/2603.24636v1-dymrl-dynamic-multispace-representation-learning-for-multimodal-event-forecasting-in-knowledge-graph)  
-   标签：评分：9.0/10、query:mmkgc
-   evidence：多模态知识图谱的动态多空间表示学习
-11. [ElephantBroker: A Knowledge-Grounded Cognitive Runtime for Trustworthy AI Agents](/202603/31/2603.25097v1-elephantbroker-a-knowledge-grounded-cognitive-runtime-for-trustworthy-ai-agents)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：将知识图谱与向量存储统一，用于智能体记忆和认知循环
-12. [UniAI-GraphRAG: Synergizing Ontology-Guided Extraction, Multi-Dimensional Clustering, and Dual-Channel Fusion for Robust Multi-Hop Reasoning](/202603/31/2603.25152v1-uniai-graphrag-synergizing-ontology-guided-extraction-multi-dimensional-clustering-and-dual-channel-fusion-for-robust-multi-hop-reasoning)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：用于多跳推理和本体引导提取的GraphRAG
-13. [Inference-Time Structural Reasoning for Compositional Vision-Language Understanding](/202603/31/2603.27349v1-inference-time-structural-reasoning-for-compositional-vision-language-understanding)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：使用场景图三元组增强视觉语言模型的结构化推理
-14. [TMTE: Effective Multimodal Graph Learning with Task-aware Modality and Topology Co-evolution](/202603/31/2603.27723v1-tmte-effective-multimodal-graph-learning-with-task-aware-modality-and-topology-co-evolution)  
-   标签：评分：9.0/10、query:mmkgc
-   evidence：多模态图学习与拓扑优化
-15. [GEAKG: Generative Executable Algorithm Knowledge Graphs](/202603/31/2603.27922v1-geakg-generative-executable-algorithm-knowledge-graphs)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：大模型生成的生成式可执行算法知识图谱
-16. [Building evidence-based knowledge graphs from full-text literature for disease-specific biomedical reasoning](/202603/31/2603.28325v1-building-evidence-based-knowledge-graphs-from-full-text-literature-for-disease-specific-biomedical-reasoning)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：大模型辅助构建疾病特定知识图谱
-17. [GraphWalker: Agentic Knowledge Graph Question Answering via Synthetic Trajectory Curriculum](/202603/31/2603.28533v1-graphwalker-agentic-knowledge-graph-question-answering-via-synthetic-trajectory-curriculum)  
-   标签：评分：9.0/10、query:mmkgc-llm
    evidence：智能体知识图谱问答与推理
+4. [Towards Energy-aware Requirements Dependency Classification: Knowledge-Graph vs. Vector-Retrieval Augmented Inference with SLMs](/202604/01/2603.23954v1-towards-energy-aware-requirements-dependency-classification-knowledge-graph-vs-vector-retrieval-augmented-inference-with-slms)  
+   标签：评分：9.0/10、query:mmkgc-llm
+   evidence：基于大模型的推理中知识图谱与向量检索的对比
+5. [Knowledge-Guided Manipulation Using Multi-Task Reinforcement Learning](/202604/01/2603.24083v1-knowledge-guided-manipulation-using-multi-task-reinforcement-learning)  
+   标签：评分：9.0/10、query:mmkgc-llm
+   evidence：基于知识图谱的智能体多任务强化学习
+6. [UniAI-GraphRAG: Synergizing Ontology-Guided Extraction, Multi-Dimensional Clustering, and Dual-Channel Fusion for Robust Multi-Hop Reasoning](/202604/01/2603.25152v2-uniai-graphrag-synergizing-ontology-guided-extraction-multi-dimensional-clustering-and-dual-channel-fusion-for-robust-multi-hop-reasoning)  
+   标签：评分：9.0/10、query:mmkgc-llm
+   evidence：本体引导的GraphRAG用于多跳推理
+7. [Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection](/202604/01/2603.25203v1-probabilistic-concept-graph-reasoning-for-multimodal-misinformation-detection)  
+   标签：评分：9.0/10、query:mmkgc-llm
+   evidence：结合概念图与多模态大模型的多模态推理
+8. [Beyond Textual Knowledge-Leveraging Multimodal Knowledge Bases for Enhancing Vision-and-Language Navigation](/202604/01/2603.26859v1-beyond-textual-knowledge-leveraging-multimodal-knowledge-bases-for-enhancing-vision-and-language-navigation)  
+   标签：评分：9.0/10、query:mmkgc-llm
+   evidence：用于视觉语言导航的多模态知识库
+9. [TMTE: Effective Multimodal Graph Learning with Task-aware Modality and Topology Co-evolution](/202604/01/2603.27723v1-tmte-effective-multimodal-graph-learning-with-task-aware-modality-and-topology-co-evolution)  
+   标签：评分：9.0/10、query:mmkgc
+   evidence：拓扑与表示协同演化的多模态图学习
+10. [MuSEAgent: A Multimodal Reasoning Agent with Stateful Experiences](/202604/01/2603.27813v1-museagent-a-multimodal-reasoning-agent-with-stateful-experiences)  
+   标签：评分：9.0/10、query:mmkgc-llm
+   evidence：具有状态经验的多模态推理智能体
+11. [GAAMA: Graph Augmented Associative Memory for Agents](/202604/01/2603.27910v1-gaama-graph-augmented-associative-memory-for-agents)  
+   标签：评分：9.0/10、query:mmkgc-llm
+   evidence：基于层次化知识图谱的智能体图增强关联记忆
 
 ### 速读区论文标签
-1. [DomAgent: Leveraging Knowledge Graphs and Case-Based Reasoning for Domain-Specific Code Generation](/202603/31/2603.21430v2-domagent-leveraging-knowledge-graphs-and-case-based-reasoning-for-domain-specific-code-generation)  
+1. [HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature](/202604/01/2603.23136v1-hgnet-scalable-foundation-model-for-automated-knowledge-graph-generation-from-scientific-literature)  
    标签：评分：8.0/10、query:mmkgc-llm
-   evidence：使用知识图谱的自主编程智能体
-2. [Guideline-grounded retrieval-augmented generation for ophthalmic clinical decision support](/202603/31/2603.21925v1-guideline-grounded-retrieval-augmented-generation-for-ophthalmic-clinical-decision-support)  
+   evidence：使用大语言模型自动生成知识图谱
+2. [SpecEyes: Accelerating Agentic Multimodal LLMs via Speculative Perception and Planning](/202604/01/2603.23483v1-speceyes-accelerating-agentic-multimodal-llms-via-speculative-perception-and-planning)  
    标签：评分：8.0/10、query:mmkgc-llm
-   evidence：用于临床问答与推理的多模态视觉RAG系统
-3. [GSEM: Graph-based Self-Evolving Memory for Experience Augmented Clinical Reasoning](/202603/31/2603.22096v1-gsem-graph-based-self-evolving-memory-for-experience-augmented-clinical-reasoning)  
+   evidence：通过投机规划加速多模态大模型智能体
+3. [Environment Maps: Structured Environmental Representations for Long-Horizon Agents](/202604/01/2603.23610v3-environment-maps-structured-environmental-representations-for-long-horizon-agents)  
    标签：评分：8.0/10、query:mmkgc-llm
-   evidence：基于图的存储器用于 LLM 增强的临床推理
-4. [3D-Layout-R1: Structured Reasoning for Language-Instructed Spatial Editing](/202603/31/2603.22279v1-3d-layout-r1-structured-reasoning-for-language-instructed-spatial-editing)  
+   evidence：长程智能体的结构化图表示
+4. [GraphER: An Efficient Graph-Based Enrichment and Reranking Method for Retrieval-Augmented Generation](/202604/01/2603.24925v1-grapher-an-efficient-graph-based-enrichment-and-reranking-method-for-retrieval-augmented-generation)  
    标签：评分：8.0/10、query:mmkgc-llm
-   evidence：多模态空间编辑中的场景图推理
-5. [SSAM: Singular Subspace Alignment for Merging Multimodal Large Language Models](/202603/31/2603.21584v1-ssam-singular-subspace-alignment-for-merging-multimodal-large-language-models)  
-   标签：评分：7.0/10、query:mmkgc
-   evidence：跨模态融合与多模态大模型合并
-6. [Let's Think with Images Efficiently! An Interleaved-Modal Chain-of-Thought Reasoning Framework with Dynamic and Precise Visual Thoughts](/202603/31/2603.21754v1-lets-think-with-images-efficiently-an-interleaved-modal-chain-of-thought-reasoning-framework-with-dynamic-and-precise-visual-thoughts)  
+   evidence：知识图谱用于检索增强生成
+5. [Focus, Don't Prune: Identifying Instruction-Relevant Regions for Information-Rich Image Understanding](/202604/01/2603.22815v1-focus-dont-prune-identifying-instruction-relevant-regions-for-information-rich-image-understanding)  
    标签：评分：7.0/10、query:mmkgc-llm
-   evidence：交错模态思维链推理与多模态输入
-7. [The Semantic Ladder: A Framework for Progressive Formalization of Natural Language Content for Knowledge Graphs and AI Systems](/202603/31/2603.22136v1-the-semantic-ladder-a-framework-for-progressive-formalization-of-natural-language-content-for-knowledge-graphs-and-ai-systems)  
+   evidence：利用多模态大模型和细粒度视觉特征进行多模态推理
+6. [Cog3DMap: Multi-View Vision-Language Reasoning with 3D Cognitive Maps](/202604/01/2603.23023v1-cog3dmap-multi-view-vision-language-reasoning-with-3d-cognitive-maps)  
    标签：评分：7.0/10、query:mmkgc-llm
-   evidence：知识图谱中自然语言内容的规范化
-8. [Multiview Graph Fusion with Covariates](/202603/31/2603.22215v1-multiview-graph-fusion-with-covariates)  
+   evidence：基于显式3D记忆的多视角视听语言推理
+7. [A Multimodal Framework for Human-Multi-Agent Interaction](/202604/01/2603.23271v1-a-multimodal-framework-for-human-multi-agent-interaction)  
+   标签：评分：7.0/10、query:mmkgc-llm
+   evidence：大模型驱动的规划与智能体多模态框架
+8. [Multi-Modal Image Fusion via Intervention-Stable Feature Learning](/202604/01/2603.23272v1-multi-modal-image-fusion-via-intervention-stable-feature-learning)  
    标签：评分：7.0/10、query:mmkgc
-   evidence：多视图图融合与联合建模
-9. [Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](/202603/31/2603.21426v1-uncertainty-aware-knowledge-distillation-for-multimodal-large-language-models)  
+   evidence：鲁棒的跨模态依赖关系与基于干预的融合方法
+9. [Q-Tacit: Image Quality Assessment via Latent Visual Reasoning](/202604/01/2603.22641v1-q-tacit-image-quality-assessment-via-latent-visual-reasoning)  
    标签：评分：6.0/10、query:mmkgc-llm
-   evidence：多模态大语言模型与知识蒸馏
-10. [Learning Trajectory-Aware Multimodal Large Language Models for Video Reasoning Segmentation](/202603/31/2603.21488v1-learning-trajectory-aware-multimodal-large-language-models-for-video-reasoning-segmentation)  
+   evidence：基于视觉语言模型的潜空间视觉推理
+10. [Think 360°: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](/202604/01/2603.22689v1-think-360-evaluating-the-width-centric-reasoning-capability-of-mllms-beyond-depth)  
    标签：评分：6.0/10、query:mmkgc-llm
-   evidence：多模态推理与文本轨迹对齐
-11. [Revisiting Weakly-Supervised Video Scene Graph Generation via Pair Affinity Learning](/202603/31/2603.21559v1-revisiting-weakly-supervised-video-scene-graph-generation-via-pair-affinity-learning)  
+   evidence：评估多模态大模型推理能力的多模态基准
+11. [WiFi2Cap: Semantic Action Captioning from Wi-Fi CSI via Limb-Level Semantic Alignment](/202604/01/2603.22690v1-wifi2cap-semantic-action-captioning-from-wi-fi-csi-via-limb-level-semantic-alignment)  
    标签：评分：6.0/10、query:mmkgc
-   evidence：视频场景图生成与结构化关系三元组
-12. [Riemannian Geometry Speaks Louder Than Words: From Graph Foundation Model to Next-Generation Graph Intelligence](/202603/31/2603.21601v1-riemannian-geometry-speaks-louder-than-words-from-graph-foundation-model-to-next-generation-graph-intelligence)  
+   evidence：多模态对齐与语义表示学习
+12. [KARMA: Knowledge-Action Regularized Multimodal Alignment for Personalized Search at Taobao](/202604/01/2603.22779v2-karma-knowledge-action-regularized-multimodal-alignment-for-personalized-search-at-taobao)  
    标签：评分：6.0/10、query:mmkgc-llm
-   evidence：图基础模型与大语言模型在图智能中的应用
+   evidence：利用LLM进行个性化搜索的多模态对齐
 
 
 <div class="dpr-home-promo-card">

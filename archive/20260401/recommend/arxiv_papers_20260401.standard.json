@@ -1,0 +1,983 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-01T20:16:57.490161+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 29,
+    "deep_cap": 7,
+    "deep_selected": 11,
+    "quick_candidates": 105,
+    "quick_skim_target": 12,
+    "quick_selected": 12
+  },
+  "deep_dive": [
+    {
+      "id": "2603.24636v1",
+      "source": "arxiv",
+      "title": "DyMRL: Dynamic Multispace Representation Learning for Multimodal Event Forecasting in Knowledge Graph",
+      "abstract": "Accurate representation of multimodal knowledge is crucial for event forecasting in real-world scenarios. However, existing studies have largely focused on static settings, overlooking the dynamic acquisition and fusion of multimodal knowledge. 1) At the knowledge acquisition level, how to learn time-sensitive information of different modalities, especially the dynamic structural modality. Existing dynamic learning methods are often limited to shallow structures across heterogeneous spaces or simple unispaces, making it difficult to capture deep relation-aware geometric features. 2) At the knowledge fusion level, how to learn evolving multimodal fusion features. Existing knowledge fusion methods based on static coattention struggle to capture the varying historical contributions of different modalities to future events. To this end, we propose DyMRL, a Dynamic Multispace Representation Learning approach to efficiently acquire and fuse multimodal temporal knowledge. 1) For the former issue, DyMRL integrates time-specific structural features from Euclidean, hyperbolic, and complex spaces into a relational message-passing framework to learn deep representations, reflecting human intelligences in associative thinking, high-order abstracting, and logical reasoning. Pretrained models endow DyMRL with time-sensitive visual and linguistic intelligences. 2) For the latter concern, DyMRL incorporates advanced dual fusion-evolution attention mechanisms that assign dynamic learning emphases equally to different modalities at different timestamps in a symmetric manner. To evaluate DyMRL's event forecasting performance through leveraging its learned multimodal temporal knowledge in history, we construct four multimodal temporal knowledge graph benchmarks. Extensive experiments demonstrate that DyMRL outperforms state-of-the-art dynamic unimodal and static multimodal baseline methods.",
+      "authors": [
+        "Feng Zhao",
+        "Kangzheng Liu",
+        "Teng Peng",
+        "Yu Yang",
+        "Guandong Xu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-03-25T09:45:16+00:00",
+      "link": "https://arxiv.org/pdf/2603.24636v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "dynamic multispace representation learning and multimodal fusion in knowledge graphs",
+      "llm_evidence_cn": "知识图谱中的动态多空间表示学习与多模态融合",
+      "llm_evidence": "知识图谱中的动态多空间表示学习与多模态融合",
+      "canonical_evidence": "知识图谱中的动态多空间表示学习与多模态融合",
+      "llm_tldr_en": "Proposes DyMRL for dynamic multimodal event forecasting and representation learning in KGs.",
+      "llm_tldr_cn": "提出DyMRL，用于知识图谱中的动态多模态事件预测和表示学习。",
+      "llm_tldr": "提出DyMRL，用于知识图谱中的动态多模态事件预测和表示学习。",
+      "llm_tags": [
+        "query:mmkgc:composite"
+      ],
+      "matched_query_tag": "query:mmkgc:composite",
+      "matched_query_text": "Papers central to 多模态知识图谱补全方向；重点关注结构、文本、图像等多源信息联合建模，跨模态融合与对齐，实体表示学习，链路预测与缺失三元组补全，以及真实场景与细粒度建模方法。, especially work that connects or combines: cross-modal fusion; multimodal link prediction; multi-modal knowledge graph; multimodal knowledge graph completion; Prioritize top tier conference papers on robust, fine grained, and generalizable multimodal knowledge graph completion; Find conference papers on multimodal knowledge graph completion that use text, image, and structural information jointly.; Find papers on multimodal entity representation learning and cross modal fusion for knowledge graph completion.; Find recent conference papers on multimodal knowledge graph completion for missing link prediction and triple completion..",
+      "matched_requirement_id": "req-composite-mmkgc",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.25152v1",
+      "source": "arxiv",
+      "title": "UniAI-GraphRAG: Synergizing Ontology-Guided Extraction, Multi-Dimensional Clustering, and Dual-Channel Fusion for Robust Multi-Hop Reasoning",
+      "abstract": "Retrieval-Augmented Generation (RAG) systems face significant challenges in complex reasoning, multi-hop queries, and domain-specific QA. While existing GraphRAG frameworks have made progress in structural knowledge organization, they still have limitations in cross-industry adaptability, community report integrity, and retrieval performance. This paper proposes UniAI-GraphRAG, an enhanced framework built upon open-source GraphRAG. The framework introduces three core innovations: (1) Ontology-Guided Knowledge Extraction that uses predefined Schema to guide LLMs in accurately identifying domain-specific entities and relations; (2) Multi-Dimensional Community Clustering Strategy that improves community completeness through alignment completion, attribute-based clustering, and multi-hop relationship clustering; (3) Dual-Channel Graph Retrieval Fusion that balances QA accuracy and performance through hybrid graph and community retrieval. Evaluation results on MultiHopRAG benchmark show that UniAI-GraphRAG outperforms mainstream open source solutions (e.g.LightRAG) in comprehensive F1 scores, particularly in inference and temporal queries. The code is available at https://github.com/UnicomAI/wanwu/tree/main/rag/rag_open_source/rag_core/graph.",
+      "authors": [
+        "Jie Wang",
+        "Honghua Huang",
+        "Xi Ge",
+        "Jianhui Su",
+        "Wen Liu",
+        "Shiguo Lian"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-03-26T08:13:43+00:00",
+      "link": "https://arxiv.org/pdf/2603.25152v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Ontology-Guided Extraction and GraphRAG for multi-hop reasoning",
+      "llm_evidence_cn": "本体引导的抽取与GraphRAG用于多跳推理",
+      "llm_evidence": "本体引导的抽取与GraphRAG用于多跳推理",
+      "canonical_evidence": "本体引导的抽取与GraphRAG用于多跳推理",
+      "llm_tldr_en": "Enhances GraphRAG with ontology-guided extraction and clustering for robust multi-hop reasoning using LLMs.",
+      "llm_tldr_cn": "通过本体引导抽取和聚类增强GraphRAG，利用大模型实现鲁棒的多跳推理。",
+      "llm_tldr": "通过本体引导抽取和聚类增强GraphRAG，利用大模型实现鲁棒的多跳推理。",
+      "llm_tags": [
+        "query:mmkgc-llm:composite"
+      ],
+      "matched_query_tag": "query:mmkgc-llm:composite",
+      "matched_query_text": "Papers central to 多模态知识图谱与大模型/Agent 结合方向；关注 LLM/MLLM 增强的知识图谱补全、图推理、问答、规划与检索增强方法。, especially work that connects or combines: incomplete knowledge graph reasoning; graph augmented llm; kg agent; multimodal reasoning with knowledge graph; large language models for knowledge graphs; multimodal knowledge graph completion; Prioritize conference papers connecting knowledge graph completion, reasoning, and multimodal large language models.; Find agent style or planning based methods that combine knowledge graphs and large language models.; Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval augmented generation.; Find conference papers that enhance multimodal knowledge graph reasoning or completion with large language models..",
+      "matched_requirement_id": "req-composite-mmkgc-llm",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.28533v1",
+      "source": "arxiv",
+      "title": "GraphWalker: Agentic Knowledge Graph Question Answering via Synthetic Trajectory Curriculum",
+      "abstract": "Agentic knowledge graph question answering (KGQA) requires an agent to iteratively interact with knowledge graphs (KGs), posing challenges in both training data scarcity and reasoning generalization. Specifically, existing approaches often restrict agent exploration: prompting-based methods lack autonomous navigation training, while current training pipelines usually confine reasoning to predefined trajectories. To this end, this paper proposes \\textit{GraphWalker}, a novel agentic KGQA framework that addresses these challenges through \\textit{Automated Trajectory Synthesis} and \\textit{Stage-wise Fine-tuning}. GraphWalker adopts a two-stage SFT training paradigm: First, the agent is trained on structurally diverse trajectories synthesized from constrained random-walk paths, establishing a broad exploration prior over the KG; Second, the agent is further fine-tuned on a small set of expert trajectories to develop reflection and error recovery capabilities. Extensive experiments demonstrate that our stage-wise SFT paradigm unlocks a higher performance ceiling for a lightweight reinforcement learning (RL) stage, enabling GraphWalker to achieve state-of-the-art performance on CWQ and WebQSP. Additional results on GrailQA and our constructed GraphWalkerBench confirm that GraphWalker enhances generalization to out-of-distribution reasoning paths. The code is publicly available at https://github.com/XuShuwenn/GraphWalker",
+      "authors": [
+        "Shuwen Xu",
+        "Yao Xu",
+        "Jiaxiang Liu",
+        "Chenhao Yuan",
+        "Wenshuo Peng",
+        "Jun Zhao",
+        "Kang Liu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-03-30T14:56:59+00:00",
+      "link": "https://arxiv.org/pdf/2603.28533v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "agentic knowledge graph question answering and reasoning",
+      "llm_evidence_cn": "智能体知识图谱问答与推理",
+      "llm_evidence": "智能体知识图谱问答与推理",
+      "canonical_evidence": "智能体知识图谱问答与推理",
+      "llm_tldr_en": "GraphWalker uses automated trajectory synthesis for agentic knowledge graph reasoning and QA.",
+      "llm_tldr_cn": "GraphWalker通过自动化轨迹合成和分阶段微调，实现智能体在知识图谱上的自主导航推理。",
+      "llm_tldr": "GraphWalker通过自动化轨迹合成和分阶段微调，实现智能体在知识图谱上的自主导航推理。",
+      "llm_tags": [
+        "query:mmkgc-llm:composite"
+      ],
+      "matched_query_tag": "query:mmkgc-llm:composite",
+      "matched_query_text": "Papers central to 多模态知识图谱与大模型/Agent 结合方向；关注 LLM/MLLM 增强的知识图谱补全、图推理、问答、规划与检索增强方法。, especially work that connects or combines: incomplete knowledge graph reasoning; graph augmented llm; kg agent; multimodal reasoning with knowledge graph; large language models for knowledge graphs; multimodal knowledge graph completion; Prioritize conference papers connecting knowledge graph completion, reasoning, and multimodal large language models.; Find agent style or planning based methods that combine knowledge graphs and large language models.; Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval augmented generation.; Find conference papers that enhance multimodal knowledge graph reasoning or completion with large language models..",
+      "matched_requirement_id": "req-composite-mmkgc-llm",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.23954v1",
+      "source": "arxiv",
+      "title": "Towards Energy-aware Requirements Dependency Classification: Knowledge-Graph vs. Vector-Retrieval Augmented Inference with SLMs",
+      "abstract": "The continuous evolution of system specifications necessitates frequent evaluation of conflicting requirements, a process that is traditionally labour intensive. Although large language models (LLMs) have demonstrated significant potential for automating this detection, their massive computational requirements often result in excessive energy waste. Consequently, there is a growing need to transition toward Small Language Models (SLMs) and energy aware architectures for sustainable Requirements Engineering. This study proposes and empirically evaluates an energy aware framework that compares Knowledge Graph-based Retrieval (KGR) with Vector-based Semantic Retrieval (VSR) to enhance SLM-based inference at the 7B to 8B parameter scale. By leveraging structured graph traversal and high dimensional semantic mapping, we extract candidate requirements, which are then classified as conflicting or neutral by an inference engine. We evaluate these retrieval enhanced strategies across Zero-Shot, Few-Shot, and Chain of Thoughts prompting methods. Using a three-pillar sustainability framework measuring energy consumption (Wh), latency (s), and carbon emissions (gCO2eq) alongside standard accuracy metrics (F1 Score), this research provides a first systematic empirical evaluation and trade off analysis between predictive performance and environmental impact. Our findings highlight the effectiveness of structured versus semantic retrieval in detecting requirement conflicts, offering a reproducible, sustainability aware architecture for energy efficient requirement engineering.",
+      "authors": [
+        "Shreyas Patil",
+        "Pragati Kumari",
+        "Novarun Deb",
+        "Gouri Ginde"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE"
+      ],
+      "published": "2026-03-25T05:29:36+00:00",
+      "link": "https://arxiv.org/pdf/2603.23954v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Knowledge graph vs vector retrieval for LLM-based inference",
+      "llm_evidence_cn": "基于大模型的推理中知识图谱与向量检索的对比",
+      "llm_evidence": "基于大模型的推理中知识图谱与向量检索的对比",
+      "canonical_evidence": "基于大模型的推理中知识图谱与向量检索的对比",
+      "llm_tldr_en": "Evaluates energy-aware KG-based retrieval versus vector retrieval for enhancing small language models.",
+      "llm_tldr_cn": "评估了基于知识图谱的检索与向量检索在增强小语言模型推理中的能效表现。",
+      "llm_tldr": "评估了基于知识图谱的检索与向量检索在增强小语言模型推理中的能效表现。",
+      "llm_tags": [
+        "query:mmkgc-llm:composite"
+      ],
+      "matched_query_tag": "query:mmkgc-llm:composite",
+      "matched_query_text": "Papers central to 多模态知识图谱与大模型/Agent 结合方向；关注 LLM/MLLM 增强的知识图谱补全、图推理、问答、规划与检索增强方法。, especially work that connects or combines: incomplete knowledge graph reasoning; graph augmented llm; kg agent; multimodal reasoning with knowledge graph; large language models for knowledge graphs; multimodal knowledge graph completion; Prioritize conference papers connecting knowledge graph completion, reasoning, and multimodal large language models.; Find agent style or planning based methods that combine knowledge graphs and large language models.; Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval augmented generation.; Find conference papers that enhance multimodal knowledge graph reasoning or completion with large language models..",
+      "matched_requirement_id": "req-composite-mmkgc-llm",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.24083v1",
+      "source": "arxiv",
+      "title": "Knowledge-Guided Manipulation Using Multi-Task Reinforcement Learning",
+      "abstract": "This paper introduces Knowledge Graph based Massively Multi-task Model-based Policy Optimization (KG-M3PO), a framework for multi-task robotic manipulation in partially observable settings that unifies Perception, Knowledge, and Policy. The method augments egocentric vision with an online 3D scene graph that grounds open-vocabulary detections into a metric, relational representation. A dynamic-relation mechanism updates spatial, containment, and affordance edges at every step, and a graph neural encoder is trained end-to-end through the RL objective so that relational features are shaped directly by control performance. Multiple observation modalities (visual, proprioceptive, linguistic, and graph-based) are encoded into a shared latent space, upon which the RL agent operates to drive the control loop. The policy conditions on lightweight graph queries alongside visual and proprioceptive inputs, yielding a compact, semantically informed state for decision making.   Experiments on a suite of manipulation tasks with occlusions, distractors, and layout shifts demonstrate consistent gains over strong baselines: the knowledge-conditioned agent achieves higher success rates, improved sample efficiency, and stronger generalization to novel objects and unseen scene configurations. These results support the premise that structured, continuously maintained world knowledge is a powerful inductive bias for scalable, generalizable manipulation: when the knowledge module participates in the RL computation graph, relational representations align with control, enabling robust long-horizon behavior under partial observability.",
+      "authors": [
+        "Aditya Narendra",
+        "Mukhammadrizo Maribjonov",
+        "Dmitry Makarov",
+        "Dmitry Yudin",
+        "Aleksandr Panov"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-03-25T08:41:32+00:00",
+      "link": "https://arxiv.org/pdf/2603.24083v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "knowledge graph based multi-task reinforcement learning for agents",
+      "llm_evidence_cn": "基于知识图谱的智能体多任务强化学习",
+      "llm_evidence": "基于知识图谱的智能体多任务强化学习",
+      "canonical_evidence": "基于知识图谱的智能体多任务强化学习",
+      "llm_tldr_en": "Integrates 3D scene graphs and multimodal observations into a shared latent space for robotic manipulation.",
+      "llm_tldr_cn": "将 3D 场景图和多模态观测整合到共享潜空间中，用于知识引导的机器人操作。",
+      "llm_tldr": "将 3D 场景图和多模态观测整合到共享潜空间中，用于知识引导的机器人操作。",
+      "llm_tags": [
+        "query:mmkgc-llm:composite"
+      ],
+      "matched_query_tag": "query:mmkgc-llm:composite",
+      "matched_query_text": "Papers central to 多模态知识图谱与大模型/Agent 结合方向；关注 LLM/MLLM 增强的知识图谱补全、图推理、问答、规划与检索增强方法。, especially work that connects or combines: incomplete knowledge graph reasoning; graph augmented llm; kg agent; multimodal reasoning with knowledge graph; large language models for knowledge graphs; multimodal knowledge graph completion; Prioritize conference papers connecting knowledge graph completion, reasoning, and multimodal large language models.; Find agent style or planning based methods that combine knowledge graphs and large language models.; Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval augmented generation.; Find conference papers that enhance multimodal knowledge graph reasoning or completion with large language models..",
+      "matched_requirement_id": "req-composite-mmkgc-llm",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.25152v2",
+      "source": "arxiv",
+      "title": "UniAI-GraphRAG: Synergizing Ontology-Guided Extraction, Multi-Dimensional Clustering, and Dual-Channel Fusion for Robust Multi-Hop Reasoning",
+      "abstract": "Retrieval-Augmented Generation (RAG) systems face significant challenges in complex reasoning, multi-hop queries, and domain-specific QA. While existing GraphRAG frameworks have made progress in structural knowledge organization, they still have limitations in cross-industry adaptability, community report integrity, and retrieval performance. This paper proposes UniAI-GraphRAG, an enhanced framework built upon open-source GraphRAG. The framework introduces three core innovations: (1) Ontology-Guided Knowledge Extraction that uses predefined Schema to guide LLMs in accurately identifying domain-specific entities and relations; (2) Multi-Dimensional Community Clustering Strategy that improves community completeness through alignment completion, attribute-based clustering, and multi-hop relationship clustering; (3) Dual-Channel Graph Retrieval Fusion that balances QA accuracy and performance through hybrid graph and community retrieval. Evaluation results on MultiHopRAG benchmark show that UniAI-GraphRAG outperforms mainstream open source solutions (e.g.LightRAG) in comprehensive F1 scores, particularly in inference and temporal queries. The code is available at https://github.com/UnicomAI/wanwu/tree/main/rag/rag_open_source/rag_core/graph.",
+      "authors": [
+        "Jie Wang",
+        "Honghua Huang",
+        "Xi Ge",
+        "Jianhui Su",
+        "Wen Liu",
+        "Shiguo Lian"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-03-26T08:13:43+00:00",
+      "link": "https://arxiv.org/pdf/2603.25152v2",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Ontology-guided GraphRAG for multi-hop reasoning",
+      "llm_evidence_cn": "本体引导的GraphRAG用于多跳推理",
+      "llm_evidence": "本体引导的GraphRAG用于多跳推理",
+      "canonical_evidence": "本体引导的GraphRAG用于多跳推理",
+      "llm_tldr_en": "Proposes UniAI-GraphRAG using ontology-guided extraction and dual-channel fusion for robust reasoning.",
+      "llm_tldr_cn": "提出UniAI-GraphRAG框架，通过本体引导提取和双通道融合增强多跳推理。",
+      "llm_tldr": "提出UniAI-GraphRAG框架，通过本体引导提取和双通道融合增强多跳推理。",
+      "llm_tags": [
+        "query:mmkgc-llm:composite"
+      ],
+      "matched_query_tag": "query:mmkgc-llm:composite",
+      "matched_query_text": "Papers central to 多模态知识图谱与大模型/Agent 结合方向；关注 LLM/MLLM 增强的知识图谱补全、图推理、问答、规划与检索增强方法。, especially work that connects or combines: incomplete knowledge graph reasoning; graph augmented llm; kg agent; multimodal reasoning with knowledge graph; large language models for knowledge graphs; multimodal knowledge graph completion; Prioritize conference papers connecting knowledge graph completion, reasoning, and multimodal large language models.; Find agent style or planning based methods that combine knowledge graphs and large language models.; Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval augmented generation.; Find conference papers that enhance multimodal knowledge graph reasoning or completion with large language models..",
+      "matched_requirement_id": "req-composite-mmkgc-llm",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.25203v1",
+      "source": "arxiv",
+      "title": "Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection",
+      "abstract": "Multimodal misinformation poses an escalating challenge that often evades traditional detectors, which are opaque black boxes and fragile against new manipulation tactics. We present Probabilistic Concept Graph Reasoning (PCGR), an interpretable and evolvable framework that reframes multimodal misinformation detection (MMD) as structured and concept-based reasoning. PCGR follows a build-then-infer paradigm, which first constructs a graph of human-understandable concept nodes, including novel high-level concepts automatically discovered and validated by multimodal large language models (MLLMs), and then applies hierarchical attention over this concept graph to infer claim veracity. This design produces interpretable reasoning chains linking evidence to conclusions. Experiments demonstrate that PCGR achieves state-of-the-art MMD accuracy and robustness to emerging manipulation types, outperforming prior methods in both coarse detection and fine-grained manipulation recognition.",
+      "authors": [
+        "Ruichao Yang",
+        "Wei Gao",
+        "Xiaobin Zhu",
+        "Jing Ma",
+        "Hongzhan Lin",
+        "Ziyang Luo",
+        "Bo-Wen Zhang",
+        "Xu-Cheng Yin"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "published": "2026-03-26T09:08:31+00:00",
+      "link": "https://arxiv.org/pdf/2603.25203v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal reasoning with concept graph and MLLMs",
+      "llm_evidence_cn": "结合概念图与多模态大模型的多模态推理",
+      "llm_evidence": "结合概念图与多模态大模型的多模态推理",
+      "canonical_evidence": "结合概念图与多模态大模型的多模态推理",
+      "llm_tldr_en": "PCGR reframes multimodal misinformation detection as structured reasoning over a concept graph using MLLMs.",
+      "llm_tldr_cn": "PCGR将多模态虚假信息检测重构为基于概念图和多模态大模型的结构化推理过程。",
+      "llm_tldr": "PCGR将多模态虚假信息检测重构为基于概念图和多模态大模型的结构化推理过程。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "multimodal reasoning with knowledge graph",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.26859v1",
+      "source": "arxiv",
+      "title": "Beyond Textual Knowledge-Leveraging Multimodal Knowledge Bases for Enhancing Vision-and-Language Navigation",
+      "abstract": "Vision-and-Language Navigation (VLN) requires an agent to navigate through complex unseen environments based on natural language instructions. However, existing methods often struggle to effectively capture key semantic cues and accurately align them with visual observations. To address this limitation, we propose Beyond Textual Knowledge (BTK), a VLN framework that synergistically integrates environment-specific textual knowledge with generative image knowledge bases. BTK employs Qwen3-4B to extract goal-related phrases and utilizes Flux-Schnell to construct two large-scale image knowledge bases: R2R-GP and REVERIE-GP. Additionally, we leverage BLIP-2 to construct a large-scale textual knowledge base derived from panoramic views, providing environment-specific semantic cues. These multimodal knowledge bases are effectively integrated via the Goal-Aware Augmentor and Knowledge Augmentor, significantly enhancing semantic grounding and cross-modal alignment. Extensive experiments on the R2R dataset with 7,189 trajectories and the REVERIE dataset with 21,702 instructions demonstrate that BTK significantly outperforms existing baselines. On the test unseen splits of R2R and REVERIE, SR increased by 5% and 2.07% respectively, and SPL increased by 4% and 3.69% respectively. The source code is available at https://github.com/yds3/IPM-BTK/.",
+      "authors": [
+        "Dongsheng Yang",
+        "Yinfeng Yu",
+        "Liejun Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "eess.IV"
+      ],
+      "published": "2026-03-27T15:25:30+00:00",
+      "link": "https://arxiv.org/pdf/2603.26859v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal knowledge bases for vision-and-language navigation",
+      "llm_evidence_cn": "用于视觉语言导航的多模态知识库",
+      "llm_evidence": "用于视觉语言导航的多模态知识库",
+      "canonical_evidence": "用于视觉语言导航的多模态知识库",
+      "llm_tldr_en": "Integrates textual and generative image knowledge bases to enhance agent navigation performance.",
+      "llm_tldr_cn": "整合文本和生成式图像知识库，以增强智能体的导航性能。",
+      "llm_tldr": "整合文本和生成式图像知识库，以增强智能体的导航性能。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval augmented generation.",
+      "matched_requirement_id": "req-16",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.27723v1",
+      "source": "arxiv",
+      "title": "TMTE: Effective Multimodal Graph Learning with Task-aware Modality and Topology Co-evolution",
+      "abstract": "Multimodal-attributed graphs (MAGs) are a fundamental data structure for multimodal graph learning (MGL), enabling both graph-centric and modality-centric tasks. However, our empirical analysis reveals inherent topology quality limitations in real-world MAGs, including noisy interactions, missing connections, and task-agnostic relational structures. A single graph derived from generic relationships is therefore unlikely to be universally optimal for diverse downstream tasks. To address this challenge, we propose Task-aware Modality and Topology co-Evolution (TMTE), a novel MGL framework that jointly and iteratively optimizes graph topology and multimodal representations toward the target task. TMTE is motivated by the bidirectional coupling between modality and topology: multimodal attributes induce relational structures, while graph topology shapes modality representations. Concretely, TMTE casts topology evolution as multi-perspective metric learning over modality embeddings with an anchor-based approximation, and formulates modality evolution as smoothness-regularized fusion with cross-modal alignment, yielding a closed-loop task-aware co-evolution process. Extensive experiments on 9 MAG datasets and 1 non-graph multimodal dataset across 6 graph-centric and modality-centric tasks show that TMTE consistently achieves state-of-the-art performance. Our code is available at https://anonymous.4open.science/r/TMTE-1873.",
+      "authors": [
+        "Yinlin Zhu",
+        "Xunkai Li",
+        "Di Wu",
+        "Wang Luo",
+        "Miao Hu",
+        "Di Wu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-03-29T14:54:59+00:00",
+      "link": "https://arxiv.org/pdf/2603.27723v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal graph learning with topology and representation co-evolution",
+      "llm_evidence_cn": "拓扑与表示协同演化的多模态图学习",
+      "llm_evidence": "拓扑与表示协同演化的多模态图学习",
+      "canonical_evidence": "拓扑与表示协同演化的多模态图学习",
+      "llm_tldr_en": "Optimizes multimodal graph topology and representations jointly for diverse downstream tasks.",
+      "llm_tldr_cn": "联合优化多模态图拓扑和表示，解决真实场景中多模态图的噪声和缺失连接问题。",
+      "llm_tldr": "联合优化多模态图拓扑和表示，解决真实场景中多模态图的噪声和缺失连接问题。",
+      "llm_tags": [
+        "query:mmkgc:composite"
+      ],
+      "matched_query_tag": "query:mmkgc:composite",
+      "matched_query_text": "Papers central to 多模态知识图谱补全方向；重点关注结构、文本、图像等多源信息联合建模，跨模态融合与对齐，实体表示学习，链路预测与缺失三元组补全，以及真实场景与细粒度建模方法。, especially work that connects or combines: cross-modal fusion; multimodal link prediction; multi-modal knowledge graph; multimodal knowledge graph completion; Prioritize top tier conference papers on robust, fine grained, and generalizable multimodal knowledge graph completion; Find conference papers on multimodal knowledge graph completion that use text, image, and structural information jointly.; Find papers on multimodal entity representation learning and cross modal fusion for knowledge graph completion.; Find recent conference papers on multimodal knowledge graph completion for missing link prediction and triple completion..",
+      "matched_requirement_id": "req-composite-mmkgc",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.27813v1",
+      "source": "arxiv",
+      "title": "MuSEAgent: A Multimodal Reasoning Agent with Stateful Experiences",
+      "abstract": "Research agents have recently achieved significant progress in information seeking and synthesis across heterogeneous textual and visual sources. In this paper, we introduce MuSEAgent, a multimodal reasoning agent that enhances decision-making by extending the capabilities of research agents to discover and leverage stateful experiences. Rather than relying on trajectory-level retrieval, we propose a stateful experience learning paradigm that abstracts interaction data into atomic decision experiences through hindsight reasoning. These experiences are organized into a quality-filtered experience bank that supports policy-driven experience retrieval at inference time. Specifically, MuSEAgent enables adaptive experience exploitation through complementary wide- and deep-search strategies, allowing the agent to dynamically retrieve multimodal guidance across diverse compositional semantic viewpoints. Extensive experiments demonstrate that MuSEAgent consistently outperforms strong trajectory-level experience retrieval baselines on both fine-grained visual perception and complex multimodal reasoning tasks. These results validate the effectiveness of stateful experience modeling in improving multimodal agent reasoning.",
+      "authors": [
+        "Shijian Wang",
+        "Jiarui Jin",
+        "Runhao Fu",
+        "Zexuan Yan",
+        "Xingjian Wang",
+        "Mengkang Hu",
+        "Eric Wang",
+        "Xiaoxi Li",
+        "Kangning Zhang",
+        "Li Yao",
+        "Wenxiang Jiao",
+        "Xuelian Cheng",
+        "Yuan Lu",
+        "Zongyuan Ge"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-03-29T18:54:31+00:00",
+      "link": "https://arxiv.org/pdf/2603.27813v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal reasoning agent with stateful experiences",
+      "llm_evidence_cn": "具有状态经验的多模态推理智能体",
+      "llm_evidence": "具有状态经验的多模态推理智能体",
+      "canonical_evidence": "具有状态经验的多模态推理智能体",
+      "llm_tldr_en": "Introduces MuSEAgent, a multimodal agent using stateful experience learning for enhanced decision-making.",
+      "llm_tldr_cn": "引入 MuSEAgent，一种利用状态经验学习增强决策能力的多模态推理智能体。",
+      "llm_tldr": "引入 MuSEAgent，一种利用状态经验学习增强决策能力的多模态推理智能体。",
+      "llm_tags": [
+        "query:mmkgc-llm:composite"
+      ],
+      "matched_query_tag": "query:mmkgc-llm:composite",
+      "matched_query_text": "Papers central to 多模态知识图谱与大模型/Agent 结合方向；关注 LLM/MLLM 增强的知识图谱补全、图推理、问答、规划与检索增强方法。, especially work that connects or combines: incomplete knowledge graph reasoning; graph augmented llm; kg agent; multimodal reasoning with knowledge graph; large language models for knowledge graphs; multimodal knowledge graph completion; Prioritize conference papers connecting knowledge graph completion, reasoning, and multimodal large language models.; Find agent style or planning based methods that combine knowledge graphs and large language models.; Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval augmented generation.; Find conference papers that enhance multimodal knowledge graph reasoning or completion with large language models..",
+      "matched_requirement_id": "req-composite-mmkgc-llm",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2603.27910v1",
+      "source": "arxiv",
+      "title": "GAAMA: Graph Augmented Associative Memory for Agents",
+      "abstract": "AI agents that interact with users across multiple sessions require persistent long-term memory to maintain coherent, personalized behavior. Current approaches either rely on flat retrieval-augmented generation (RAG), which loses structural relationships between memories, or use memory compression and vector retrieval that cannot capture the associative structure of multi-session conversations. There are few graph based techniques proposed in the literature, however they still suffer from hub dominated retrieval and poor hierarchical reasoning over evolving memory. We propose GAAMA, a graph-augmented associative memory system that constructs a concept-mediated hierarchical knowledge graph through a three-step pipeline: (1)~verbatim episode preservation from raw conversations, (2)~LLM-based extraction of atomic facts and topic-level concept nodes, and (3)~synthesis of higher-order reflections. The resulting graph uses four node types (episode, fact, reflection, concept) connected by five structural edge types, with concept nodes providing cross-cutting traversal paths that complement semantic similarity. Retrieval combines cosine-similarity-based $k$-nearest neighbor search with edge-type-aware Personalized PageRank (PPR) through an additive scoring function. On the LoCoMo-10 benchmark (1,540 questions across 10 multi-session conversations), GAAMA achieves 78.9\\% mean reward, outperforming a tuned RAG baseline (75.0\\%), HippoRAG (69.9\\%), A-Mem (47.2\\%), and Nemori (52.1\\%). Ablation analysis shows that augmenting graph-traversal-based ranking (Personalized PageRank) with semantic search consistently improves over pure semantic search on graph nodes (+1.0 percentage point overall).",
+      "authors": [
+        "Swarna Kamal Paul",
+        "Shubhendu Sharma",
+        "Nitin Sareen"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR",
+        "cs.MA"
+      ],
+      "published": "2026-03-29T23:33:38+00:00",
+      "link": "https://arxiv.org/pdf/2603.27910v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "graph-augmented associative memory for agents using hierarchical knowledge graphs",
+      "llm_evidence_cn": "基于层次化知识图谱的智能体图增强关联记忆",
+      "llm_evidence": "基于层次化知识图谱的智能体图增强关联记忆",
+      "canonical_evidence": "基于层次化知识图谱的智能体图增强关联记忆",
+      "llm_tldr_en": "GAAMA constructs hierarchical knowledge graphs to provide long-term associative memory for AI agents.",
+      "llm_tldr_cn": "GAAMA 通过构建层次化知识图谱，为 AI 智能体提供长期关联记忆支持。",
+      "llm_tldr": "GAAMA 通过构建层次化知识图谱，为 AI 智能体提供长期关联记忆支持。",
+      "llm_tags": [
+        "query:mmkgc-llm:composite"
+      ],
+      "matched_query_tag": "query:mmkgc-llm:composite",
+      "matched_query_text": "Papers central to 多模态知识图谱与大模型/Agent 结合方向；关注 LLM/MLLM 增强的知识图谱补全、图推理、问答、规划与检索增强方法。, especially work that connects or combines: incomplete knowledge graph reasoning; graph augmented llm; kg agent; multimodal reasoning with knowledge graph; large language models for knowledge graphs; multimodal knowledge graph completion; Prioritize conference papers connecting knowledge graph completion, reasoning, and multimodal large language models.; Find agent style or planning based methods that combine knowledge graphs and large language models.; Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval augmented generation.; Find conference papers that enhance multimodal knowledge graph reasoning or completion with large language models..",
+      "matched_requirement_id": "req-composite-mmkgc-llm",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2603.23136v1",
+      "source": "arxiv",
+      "title": "HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature",
+      "abstract": "Automated knowledge graph (KG) construction is essential for navigating the rapidly expanding body of scientific literature. However, existing approaches struggle to recognize long multi-word entities, often fail to generalize across domains, and typically overlook the hierarchical nature of scientific knowledge. While general-purpose large language models (LLMs) offer adaptability, they are computationally expensive and yield inconsistent accuracy on specialized tasks. As a result, current KGs are shallow and inconsistent, limiting their utility for exploration and synthesis. We propose a two-stage framework for scalable, zero-shot scientific KG construction. The first stage, Z-NERD, introduces (i) Orthogonal Semantic Decomposition (OSD), which promotes domain-agnostic entity recognition by isolating semantic \"turns\" in text, and (ii) a Multi-Scale TCQK attention mechanism that captures coherent multi-word entities through n-gram-aware attention heads. The second stage, HGNet, performs relation extraction with hierarchy-aware message passing, explicitly modeling parent, child, and peer relations. To enforce global consistency, we introduce two complementary objectives: a Differentiable Hierarchy Loss to discourage cycles and shortcut edges, and a Continuum Abstraction Field (CAF) Loss that embeds abstraction levels along a learnable axis in Euclidean space. This is the first approach to formalize hierarchical abstraction as a continuous property within standard Euclidean embeddings, offering a simpler alternative to hyperbolic methods. We release SPHERE (https://github.com/basiralab/SPHERE), a multi-domain benchmark for hierarchical relation extraction. Our framework establishes a new state of the art on SciERC, SciER, and SPHERE, improving NER by 8.08% and RE by 5.99% on out-of-distribution tests. In zero-shot settings, gains reach 10.76% for NER and 26.2% for RE.",
+      "authors": [
+        "Devvrat Joshi",
+        "Islem Rekik"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "published": "2026-03-24T12:35:10+00:00",
+      "link": "https://arxiv.org/pdf/2603.23136v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "automated knowledge graph generation using LLMs",
+      "llm_evidence_cn": "使用大语言模型自动生成知识图谱",
+      "llm_evidence": "使用大语言模型自动生成知识图谱",
+      "canonical_evidence": "使用大语言模型自动生成知识图谱",
+      "llm_tldr_en": "A foundation model framework for scalable, zero-shot scientific knowledge graph construction.",
+      "llm_tldr_cn": "一种用于可扩展、零样本科学知识图谱构建的基础模型框架。",
+      "llm_tldr": "一种用于可扩展、零样本科学知识图谱构建的基础模型框架。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "large language models for knowledge graphs",
+      "matched_requirement_id": "req-13",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2603.22815v1",
+      "source": "arxiv",
+      "title": "Focus, Don't Prune: Identifying Instruction-Relevant Regions for Information-Rich Image Understanding",
+      "abstract": "Large Vision-Language Models (LVLMs) have shown strong performance across various multimodal tasks by leveraging the reasoning capabilities of Large Language Models (LLMs). However, processing visually complex and information-rich images, such as infographics or document layouts, requires these models to generate a large number of visual tokens, leading to significant computational overhead. To address this, we propose PinPoint, a novel two-stage framework that first identifies instruction-relevant image regions and then refines them to extract fine-grained visual features for improved reasoning and efficiency. Central to our approach is the Instruction-Region Alignment, which localizes relevant regions using both visual input and textual instructions. We further introduce new annotations that provide richer ground-truth supervision for instruction-relevant regions across challenging VQA benchmarks: InfographicVQA, MultiPageDocVQA, and SinglePageDocVQA. Experimental results show that PinPoint not only achieves superior accuracy compared to existing methods but also reduces computational overhead by minimizing irrelevant visual tokens.",
+      "authors": [
+        "Mincheol Kwon",
+        "Minseung Lee",
+        "Seonga Choi",
+        "Miso Choi",
+        "Kyeong-Jin Oh",
+        "Hyunyoung Lee",
+        "Cheonyoung Park",
+        "Yongho Song",
+        "Seunghyun Park",
+        "Jinkyu Kim"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-03-24T05:37:01+00:00",
+      "link": "https://arxiv.org/pdf/2603.22815v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal reasoning with LVLMs and fine-grained visual features",
+      "llm_evidence_cn": "利用多模态大模型和细粒度视觉特征进行多模态推理",
+      "llm_evidence": "利用多模态大模型和细粒度视觉特征进行多模态推理",
+      "canonical_evidence": "利用多模态大模型和细粒度视觉特征进行多模态推理",
+      "llm_tldr_en": "Proposes PinPoint to identify instruction-relevant regions for efficient fine-grained multimodal reasoning.",
+      "llm_tldr_cn": "提出 PinPoint 框架，通过识别指令相关区域来提高细粒度多模态推理的效率和准确性。",
+      "llm_tldr": "提出 PinPoint 框架，通过识别指令相关区域来提高细粒度多模态推理的效率和准确性。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "multimodal reasoning with knowledge graph",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2603.22641v1",
+      "source": "arxiv",
+      "title": "Q-Tacit: Image Quality Assessment via Latent Visual Reasoning",
+      "abstract": "Vision-Language Model (VLM)-based image quality assessment (IQA) has been significantly advanced by incorporating Chain-of-Thought (CoT) reasoning. Recent work has refined image quality reasoning by applying reinforcement learning (RL) and leveraging active visual tools. However, such strategies are typically language-centric, with visual information being treated as static preconditions. Quality-related visual cues often cannot be abstracted into text in extenso due to the gap between discrete textual tokens and quality perception space, which in turn restricts the reasoning effectiveness for visually intensive IQA tasks. In this paper, we revisit this by asking the question, \"Is natural language the ideal space for quality reasoning?\" and, as a consequence, we propose Q-Tacit, a new paradigm that elicits VLMs to reason beyond natural language in the latent quality space. Our approach follows a synergistic two-stage process: (i) injecting structural visual quality priors into the latent space, and (ii) calibrating latent reasoning trajectories to improve quality assessment ability. Extensive experiments demonstrate that Q-Tacit can effectively perform quality reasoning with significantly fewer tokens than previous reasoning-based methods, while achieving strong overall performance. This paper validates the proposition that language is not the only compact representation suitable for visual quality, opening possibilities for further exploration of effective latent reasoning paradigms for IQA. Source code will be released to support future research.",
+      "authors": [
+        "Yuxuan Jiang",
+        "Yixuan Li",
+        "Hanwei Zhu",
+        "Siyue Teng",
+        "Fan Zhang",
+        "David Bull"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-03-23T23:32:20+00:00",
+      "link": "https://arxiv.org/pdf/2603.22641v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "latent visual reasoning with vision-language models",
+      "llm_evidence_cn": "基于视觉语言模型的潜空间视觉推理",
+      "llm_evidence": "基于视觉语言模型的潜空间视觉推理",
+      "canonical_evidence": "基于视觉语言模型的潜空间视觉推理",
+      "llm_tldr_en": "Explores latent visual reasoning in VLMs to bridge the gap between textual tokens and visual quality perception.",
+      "llm_tldr_cn": "探索视觉语言模型中的潜空间视觉推理，以弥补文本标记与视觉质量感知之间的鸿沟。",
+      "llm_tldr": "探索视觉语言模型中的潜空间视觉推理，以弥补文本标记与视觉质量感知之间的鸿沟。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "multimodal reasoning with knowledge graph",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2603.23483v1",
+      "source": "arxiv",
+      "title": "SpecEyes: Accelerating Agentic Multimodal LLMs via Speculative Perception and Planning",
+      "abstract": "Agentic multimodal large language models (MLLMs) (e.g., OpenAI o3 and Gemini Agentic Vision) achieve remarkable reasoning capabilities through iterative visual tool invocation. However, the cascaded perception, reasoning, and tool-calling loops introduce significant sequential overhead. This overhead, termed agentic depth, incurs prohibitive latency and seriously limits system-level concurrency. To this end, we propose SpecEyes, an agentic-level speculative acceleration framework that breaks this sequential bottleneck. Our key insight is that a lightweight, tool-free MLLM can serve as a speculative planner to predict the execution trajectory, enabling early termination of expensive tool chains without sacrificing accuracy. To regulate this speculative planning, we introduce a cognitive gating mechanism based on answer separability, which quantifies the model's confidence for self-verification without requiring oracle labels. Furthermore, we design a heterogeneous parallel funnel that exploits the stateless concurrency of the small model to mask the stateful serial execution of the large model, maximizing system throughput. Extensive experiments on V* Bench, HR-Bench, and POPE demonstrate that SpecEyes achieves 1.1-3.35x speedup over the agentic baseline while preserving or even improving accuracy (up to +6.7%), thereby boosting serving throughput under concurrent workloads.",
+      "authors": [
+        "Haoyu Huang",
+        "Jinfa Huang",
+        "Zhongwei Wan",
+        "Xiawu Zheng",
+        "Rongrong Ji",
+        "Jiebo Luo"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "published": "2026-03-24T17:45:47+00:00",
+      "link": "https://arxiv.org/pdf/2603.23483v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "accelerating agentic multimodal LLMs via speculative planning",
+      "llm_evidence_cn": "通过投机规划加速多模态大模型智能体",
+      "llm_evidence": "通过投机规划加速多模态大模型智能体",
+      "canonical_evidence": "通过投机规划加速多模态大模型智能体",
+      "llm_tldr_en": "Proposes SpecEyes to reduce latency in agentic MLLMs through speculative perception and planning.",
+      "llm_tldr_cn": "提出 SpecEyes 框架，通过投机感知和规划降低多模态大模型智能体的推理延迟。",
+      "llm_tldr": "提出 SpecEyes 框架，通过投机感知和规划降低多模态大模型智能体的推理延迟。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "Find agent style or planning based methods that combine knowledge graphs and large language models.",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2603.23023v1",
+      "source": "arxiv",
+      "title": "Cog3DMap: Multi-View Vision-Language Reasoning with 3D Cognitive Maps",
+      "abstract": "Precise spatial understanding from multi-view images remains a fundamental challenge for Multimodal Large Language Models (MLLMs), as their visual representations are predominantly semantic and lack explicit geometric grounding. While existing approaches augment visual tokens with geometric cues from visual geometry models, their MLLM is still required to implicitly infer the underlying 3D structure of the scene from these augmented tokens, limiting its spatial reasoning capability. To address this issue, we introduce Cog3DMap, a framework that recurrently constructs an explicit 3D memory from multi-view images, where each token is grounded in 3D space and possesses both semantic and geometric information. By feeding these tokens into the MLLM, our framework enables direct reasoning over a spatially structured 3D map, achieving state-of-the-art performance on various spatial reasoning benchmarks. Code will be made publicly available.",
+      "authors": [
+        "Chanyoung Gwak",
+        "Yoonwoo Jeong",
+        "Byungwoo Jeon",
+        "Hyunseok Lee",
+        "Jinwoo Shin",
+        "Minsu Cho"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-03-24T10:05:32+00:00",
+      "link": "https://arxiv.org/pdf/2603.23023v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multi-view vision-language reasoning with explicit 3D memory",
+      "llm_evidence_cn": "基于显式3D记忆的多视角视听语言推理",
+      "llm_evidence": "基于显式3D记忆的多视角视听语言推理",
+      "canonical_evidence": "基于显式3D记忆的多视角视听语言推理",
+      "llm_tldr_en": "Cog3DMap constructs 3D cognitive maps to improve spatial reasoning in multimodal large language models.",
+      "llm_tldr_cn": "Cog3DMap通过构建显式3D认知地图，提升了多模态大模型的空间推理能力。",
+      "llm_tldr": "Cog3DMap通过构建显式3D认知地图，提升了多模态大模型的空间推理能力。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "multimodal reasoning with knowledge graph",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2603.22689v1",
+      "source": "arxiv",
+      "title": "Think 360°: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth",
+      "abstract": "In this paper, we present a holistic multimodal benchmark that evaluates the reasoning capabilities of MLLMs with an explicit focus on reasoning width, a complementary dimension to the more commonly studied reasoning depth. Specifically, reasoning depth measures the model's ability to carry out long-chain, sequential reasoning in which each step is tightly and rigorously linked to the next. Reasoning width tends to focus more on the model's capacity for broad trial-and-error search or multi-constrained optimization: it must systematically traverse many possible and parallelized reasoning paths, apply diverse constraints to prune unpromising branches, and identify valid solution routes for efficient iteration or backtracking. To achieve it, we carefully curate 1200+ high-quality multimodal cases spanning heterogeneous domains, and propose a fine-grained tree-of-thought evaluation protocol that jointly quantifies reasoning width and depth. We evaluate 12 major model families (over 30 advanced MLLMs) across difficulty tiers, question types, and required skills. Results show that while current models exhibit strong performance on general or common-sense VQA tasks, they still struggle to combine deep sequential thought chains with wide exploratory search to perform genuine insight-based reasoning. Finally, we analyze characteristic failure modes to provide possible directions for building MLLMs that reason not only deeper but also wider.",
+      "authors": [
+        "Mingrui Chen",
+        "Hexiong Yang",
+        "Haogeng Liu",
+        "Huaibo Huang",
+        "Ran He"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-03-24T01:29:24+00:00",
+      "link": "https://arxiv.org/pdf/2603.22689v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multimodal benchmark for reasoning capabilities of MLLMs",
+      "llm_evidence_cn": "评估多模态大模型推理能力的多模态基准",
+      "llm_evidence": "评估多模态大模型推理能力的多模态基准",
+      "canonical_evidence": "评估多模态大模型推理能力的多模态基准",
+      "llm_tldr_en": "Introduces a benchmark to evaluate the width-centric reasoning capabilities of MLLMs beyond depth.",
+      "llm_tldr_cn": "提出一个基准，旨在评估多模态大模型在深度之外的广度推理能力。",
+      "llm_tldr": "提出一个基准，旨在评估多模态大模型在深度之外的广度推理能力。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "multimodal reasoning with knowledge graph",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2603.23610v3",
+      "source": "arxiv",
+      "title": "Environment Maps: Structured Environmental Representations for Long-Horizon Agents",
+      "abstract": "Although large language models (LLMs) have advanced rapidly, robust automation of complex software workflows remains an open problem. In long-horizon settings, agents frequently suffer from cascading errors and environmental stochasticity; a single misstep in a dynamic interface can lead to task failure, resulting in hallucinations or trial-and-error. This paper introduces $\\textit{Environment Maps}$: a persistent, agent-agnostic representation that mitigates these failures by consolidating heterogeneous evidence, such as screen recordings and execution traces, into a structured graph. The representation consists of four core components: (1) Contexts (abstracted locations), (2) Actions (parameterized affordances), (3) Workflows (observed trajectories), and (4) Tacit Knowledge (domain definitions and reusable procedures). We evaluate this framework on the WebArena benchmark across five domains. Agents equipped with environment maps achieve a 28.2% success rate, nearly doubling the performance of baselines limited to session-bound context (14.2%) and outperforming agents that have access to the raw trajectory data used to generate the environment maps (23.3%). By providing a structured interface between the model and the environment, Environment Maps establish a persistent foundation for long-horizon planning that is human-interpretable, editable, and incrementally refinable.",
+      "authors": [
+        "Yenchia Feng",
+        "Chirag Sharma",
+        "Karime Maamari"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-03-24T18:00:56+00:00",
+      "link": "https://arxiv.org/pdf/2603.23610v3",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "structured graph representation for long-horizon agents",
+      "llm_evidence_cn": "长程智能体的结构化图表示",
+      "llm_evidence": "长程智能体的结构化图表示",
+      "canonical_evidence": "长程智能体的结构化图表示",
+      "llm_tldr_en": "Uses structured graphs to consolidate evidence and mitigate failures in long-horizon agent tasks.",
+      "llm_tldr_cn": "利用结构化图整合证据，减少长程智能体任务中的幻觉与错误。",
+      "llm_tldr": "利用结构化图整合证据，减少长程智能体任务中的幻觉与错误。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "Find agent style or planning based methods that combine knowledge graphs and large language models.",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2603.23271v1",
+      "source": "arxiv",
+      "title": "A Multimodal Framework for Human-Multi-Agent Interaction",
+      "abstract": "Human-robot interaction is increasingly moving toward multi-robot, socially grounded environments. Existing systems struggle to integrate multimodal perception, embodied expression, and coordinated decision-making in a unified framework. This limits natural and scalable interaction in shared physical spaces. We address this gap by introducing a multimodal framework for human-multi-agent interaction in which each robot operates as an autonomous cognitive agent with integrated multimodal perception and Large Language Model (LLM)-driven planning grounded in embodiment. At the team level, a centralized coordination mechanism regulates turn-taking and agent participation to prevent overlapping speech and conflicting actions. Implemented on two humanoid robots, our framework enables coherent multi-agent interaction through interaction policies that combine speech, gesture, gaze, and locomotion. Representative interaction runs demonstrate coordinated multimodal reasoning across agents and grounded embodied responses. Future work will focus on larger-scale user studies and deeper exploration of socially grounded multi-agent interaction dynamics.",
+      "authors": [
+        "Shaid Hasan",
+        "Breenice Lee",
+        "Sujan Sarker",
+        "Tariq Iqbal"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-03-24T14:35:40+00:00",
+      "link": "https://arxiv.org/pdf/2603.23271v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal framework for LLM-driven planning and agents",
+      "llm_evidence_cn": "大模型驱动的规划与智能体多模态框架",
+      "llm_evidence": "大模型驱动的规划与智能体多模态框架",
+      "canonical_evidence": "大模型驱动的规划与智能体多模态框架",
+      "llm_tldr_en": "Presents a multimodal framework for human-multi-agent interaction using LLM-driven planning.",
+      "llm_tldr_cn": "展示了一个用于人机交互的多模态框架，利用大模型驱动智能体进行规划与决策。",
+      "llm_tldr": "展示了一个用于人机交互的多模态框架，利用大模型驱动智能体进行规划与决策。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "kg agent",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2603.22690v1",
+      "source": "arxiv",
+      "title": "WiFi2Cap: Semantic Action Captioning from Wi-Fi CSI via Limb-Level Semantic Alignment",
+      "abstract": "Privacy-preserving semantic understanding of human activities is important for indoor sensing, yet existing Wi-Fi CSI-based systems mainly focus on pose estimation or predefined action classification rather than fine-grained language generation. Mapping CSI to natural-language descriptions remains challenging because of the semantic gap between wireless signals and language and direction-sensitive ambiguities such as left/right limb confusion. We propose WiFi2Cap, a three-stage framework for generating action captions directly from Wi-Fi CSI. A vision-language teacher learns transferable supervision from synchronized video-text pairs, and a CSI student is aligned to the teacher's visual space and text embeddings. To improve direction-sensitive captioning, we introduce a Mirror-Consistency Loss that reduces mirrored-action and left-right ambiguities during cross-modal alignment. A prefix-tuned language model then generates action descriptions from CSI embeddings. We also introduce the WiFi2Cap Dataset, a synchronized CSI-RGB-sentence benchmark for semantic captioning from Wi-Fi signals. Experimental results show that WiFi2Cap consistently outperforms baseline methods on BLEU-4, METEOR, ROUGE-L, CIDEr, and SPICE, demonstrating effective privacy-friendly semantic sensing.",
+      "authors": [
+        "Tzu-Ti Wei",
+        "Chu-Yu Huang",
+        "Yu-Chee Tseng",
+        "Jen-Jee Chen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-03-24T01:30:46+00:00",
+      "link": "https://arxiv.org/pdf/2603.22690v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multimodal alignment and semantic representation learning",
+      "llm_evidence_cn": "多模态对齐与语义表示学习",
+      "llm_evidence": "多模态对齐与语义表示学习",
+      "canonical_evidence": "多模态对齐与语义表示学习",
+      "llm_tldr_en": "Aligns Wi-Fi CSI signals with vision-language embeddings for fine-grained action captioning.",
+      "llm_tldr_cn": "将 Wi-Fi CSI 信号与视觉语言嵌入对齐，实现细粒度的动作描述生成。",
+      "llm_tldr": "将 Wi-Fi CSI 信号与视觉语言嵌入对齐，实现细粒度的动作描述生成。",
+      "llm_tags": [
+        "query:mmkgc"
+      ],
+      "matched_query_tag": "query:mmkgc",
+      "matched_query_text": "Find papers on multimodal entity representation learning and cross modal fusion for knowledge graph completion.",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2603.24925v1",
+      "source": "arxiv",
+      "title": "GraphER: An Efficient Graph-Based Enrichment and Reranking Method for Retrieval-Augmented Generation",
+      "abstract": "Semantic search in retrieval-augmented generation (RAG) systems is often insufficient for complex information needs, particularly when relevant evidence is scattered across multiple sources. Prior approaches to this problem include agentic retrieval strategies, which expand the semantic search space by generating additional queries. However, these methods do not fully leverage the organizational structure of the data and instead rely on iterative exploration, which can lead to inefficient retrieval. Another class of approaches employs knowledge graphs to model non-semantic relationships through graph edges. Although effective in capturing richer proximities, such methods incur significant maintenance costs and are often incompatible with the vector stores used in most production systems. To address these limitations, we propose GraphER, a graph-based enrichment and reranking method that captures multiple forms of proximity beyond semantic similarity. GraphER independently enriches data objects during offline indexing and performs graph-based reranking over candidate objects at query time. This design does not require a knowledge graph, allowing GraphER to integrate seamlessly with standard vector stores. In addition, GraphER is retriever-agnostic and introduces negligible latency overhead. Experiments on multiple retrieval benchmarks demonstrate the effectiveness of the proposed approach.",
+      "authors": [
+        "Ruizhong Miao",
+        "Yuying Wang",
+        "Rongguang Wang",
+        "Chenyang Li",
+        "Tao Sheng",
+        "Sujith Ravi",
+        "Dan Roth"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-03-26T01:30:22+00:00",
+      "link": "https://arxiv.org/pdf/2603.24925v1",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "knowledge graphs for retrieval augmented generation",
+      "llm_evidence_cn": "知识图谱用于检索增强生成",
+      "llm_evidence": "知识图谱用于检索增强生成",
+      "canonical_evidence": "知识图谱用于检索增强生成",
+      "llm_tldr_en": "GraphER uses knowledge graphs to model non-semantic relationships for improved retrieval-augmented generation.",
+      "llm_tldr_cn": "GraphER利用知识图谱建模非语义关系，以改进检索增强生成（RAG）系统。",
+      "llm_tldr": "GraphER利用知识图谱建模非语义关系，以改进检索增强生成（RAG）系统。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "Find papers on multimodal knowledge graphs for multimodal reasoning, question answering, or retrieval augmented generation.",
+      "matched_requirement_id": "req-16",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2603.23272v1",
+      "source": "arxiv",
+      "title": "Multi-Modal Image Fusion via Intervention-Stable Feature Learning",
+      "abstract": "Multi-modal image fusion integrates complementary information from different modalities into a unified representation. Current methods predominantly optimize statistical correlations between modalities, often capturing dataset-induced spurious associations that degrade under distribution shifts. In this paper, we propose an intervention-based framework inspired by causal principles to identify robust cross-modal dependencies. Drawing insights from Pearl's causal hierarchy, we design three principled intervention strategies to probe different aspects of modal relationships: i) complementary masking with spatially disjoint perturbations tests whether modalities can genuinely compensate for each other's missing information, ii) random masking of identical regions identifies feature subsets that remain informative under partial observability, and iii) modality dropout evaluates the irreplaceable contribution of each modality. Based on these interventions, we introduce a Causal Feature Integrator (CFI) that learns to identify and prioritize intervention-stable features maintaining importance across different perturbation patterns through adaptive invariance gating, thereby capturing robust modal dependencies rather than spurious correlations. Extensive experiments demonstrate that our method achieves SOTA performance on both public benchmarks and downstream high-level vision tasks.",
+      "authors": [
+        "Xue Wang",
+        "Zheng Guan",
+        "Wenhua Qian",
+        "Chengchao Wang",
+        "Runzhuo Ma"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.MM"
+      ],
+      "published": "2026-03-24T14:36:24+00:00",
+      "link": "https://arxiv.org/pdf/2603.23272v1",
+      "tags": [
+        "keyword:MMKGC",
+        "query:MMKGC"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "robust cross-modal dependencies and intervention-based fusion",
+      "llm_evidence_cn": "鲁棒的跨模态依赖关系与基于干预的融合方法",
+      "llm_evidence": "鲁棒的跨模态依赖关系与基于干预的融合方法",
+      "canonical_evidence": "鲁棒的跨模态依赖关系与基于干预的融合方法",
+      "llm_tldr_en": "Proposes a causal intervention framework for robust multi-modal image fusion to eliminate spurious correlations.",
+      "llm_tldr_cn": "提出一种基于因果干预的鲁棒多模态图像融合框架，旨在消除模态间的伪相关性。",
+      "llm_tldr": "提出一种基于因果干预的鲁棒多模态图像融合框架，旨在消除模态间的伪相关性。",
+      "llm_tags": [
+        "query:mmkgc"
+      ],
+      "matched_query_tag": "query:mmkgc",
+      "matched_query_text": "cross-modal fusion",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2603.22779v2",
+      "source": "arxiv",
+      "title": "KARMA: Knowledge-Action Regularized Multimodal Alignment for Personalized Search at Taobao",
+      "abstract": "Large Language Models (LLMs) are equipped with profound semantic knowledge, making them a natural choice for injecting semantic generalization into personalized search systems. However, in practice we find that directly fine-tuning LLMs on industrial personalized tasks (e.g. next item prediction) often yields suboptimal results. We attribute this bottleneck to a critical Knowledge--Action Gap: the inherent conflict between preserving pre-trained semantic knowledge and aligning with specific personalized actions by discriminative objectives. Empirically, action-only training objectives induce Semantic Collapse, such as attention \"sinks\". This degradation severely cripples the LLM's generalization, failing to bring improvements to personalized search systems.   We propose KARMA (Knowledge--Action Regularized Multimodal Alignment), a unified framework that treats semantic reconstruction as a train-only regularizer. KARMA optimizes a next-interest embedding for retrieval (Action) while enforcing semantic decodability (Knowledge) through two complementary objectives: (i) history-conditioned semantic generation, which anchors optimization to the LLM's native next-token distribution, and (ii) embedding-conditioned semantic reconstruction, which constrains the interest embedding to remain semantically recoverable.   On Taobao search system, KARMA mitigates semantic collapse (attention-sink analysis) and improves both action metrics and semantic fidelity. In ablations, semantic decodability yields up to +22.5 HR@200. With KARMA, we achieve +0.25 CTR AUC in ranking, +1.86 HR in pre-ranking and +2.51 HR in recalling. Deployed online with low inference overhead at ranking & pre-ranking stage, KARMA drives +0.9% increase in GMV.",
+      "authors": [
+        "Zhi Sun",
+        "Wenming Zhang",
+        "Yi Wei",
+        "Liren Yu",
+        "Zhixuan Zhang",
+        "Dan Ou",
+        "Haihong Tang"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-03-24T04:13:30+00:00",
+      "link": "https://arxiv.org/pdf/2603.22779v2",
+      "tags": [
+        "keyword:MMKGC",
+        "keyword:MMKGC-LLM",
+        "query:MMKGC",
+        "query:MMKGC-LLM"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "multimodal alignment for personalized search using LLMs",
+      "llm_evidence_cn": "利用LLM进行个性化搜索的多模态对齐",
+      "llm_evidence": "利用LLM进行个性化搜索的多模态对齐",
+      "canonical_evidence": "利用LLM进行个性化搜索的多模态对齐",
+      "llm_tldr_en": "Proposes KARMA to bridge the knowledge-action gap in LLM-based personalized search systems.",
+      "llm_tldr_cn": "提出KARMA框架，通过多模态对齐解决LLM在个性化搜索任务中的语义崩溃问题。",
+      "llm_tldr": "提出KARMA框架，通过多模态对齐解决LLM在个性化搜索任务中的语义崩溃问题。",
+      "llm_tags": [
+        "query:mmkgc-llm"
+      ],
+      "matched_query_tag": "query:mmkgc-llm",
+      "matched_query_text": "large language models for knowledge graphs",
+      "matched_requirement_id": "req-13",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

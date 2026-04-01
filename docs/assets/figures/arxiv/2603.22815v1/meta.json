@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.22815v1/fig-001.webp",
+      "caption": "Figure 1. Given an input instruction (e.g., “What are the average retirement savings for Americans?”), (a) a conventional approach aims to prune tokens based on attention weights; however, this method is often unreliable and can produce hallucinated outputs. (b) Our method, called PinPoint, first identifies instructionrelevant regions and then refines these regions to retain only the most relevant tokens, thereby improving the model’s factuality.",
+      "page": 1,
+      "index": 1,
+      "width": 462,
+      "height": 598
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22815v1/fig-002.webp",
+      "caption": "Table 1. Quantitative comparison with state-of-the-art methods on VQA benchmarks: InfoVQA [33], SPDocVQA [32], MPDocVQA [39], and GQA [16]. We report Average Normalized Levenshtein Similarity (ANLS) scores, TFLOPs, and latency demonstrating that our proposed method consistently outperforms existing approaches while utilizing a comparable number of visual tokens. For reference, we also include results from a vanilla model that does not apply any token reduction strategy.",
+      "page": 6,
+      "index": 2,
+      "width": 1026,
+      "height": 359
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22815v1/fig-003.webp",
+      "caption": "Figure A11. Prompt for identifying instruction-relevant regions using a VLM",
+      "page": 21,
+      "index": 3,
+      "width": 1032,
+      "height": 1235
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22815v1/fig-004.webp",
+      "caption": "Figure 6. A qualitative comparison among FastV [7], PyramidDrop [43], and our proposed PinPoint reveals distinct behavioral differences. While FastV [7] and PyramidDrop [43] tend to prune tokens within the answer-relevant regions—often leading to hallucinatory or semantically inconsistent responses—our PinPoint effectively identifies and preserves the answer-critical regions, thereby yielding more accurate and contextually grounded predictions. Note that red indicates the ground-truth answer regions, blue denotes the sliding windows selected by our method, and purple highlights the image areas pinpointed as most relevant to the predicted answer.",
+      "page": 7,
+      "index": 4,
+      "width": 1024,
+      "height": 551
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22815v1/fig-005.webp",
+      "caption": "Table A11. Distribution of MPDocVQA [39] Questions by Processing Type.",
+      "page": 14,
+      "index": 5,
+      "width": 495,
+      "height": 335
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22815v1/fig-006.webp",
+      "caption": "Figure 3. An overview of the proposed PinPoint architecture, which comprises two main stages: (1) Region Selection and (2) Region Refinement. Given a user instruction (e.g., “What symbol represents American identity?”), the Region Selection stage identifies adaptive top-k instruction-relevant image regions (e.g., areas surrounding the Statue of Liberty) using region-level feature extraction via a sliding window approach. The Region Refinement stage then further processes these regions to extract fine-grained visual tokens, which are subsequently fed into a large language model (LLM) to generate the final answer (e.g., “The statue of liberty”).",
+      "page": 3,
+      "index": 6,
+      "width": 1036,
+      "height": 522
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22815v1/fig-007.webp",
+      "caption": "Figure 4. Illustration for intra-image contrastive loss. Region features required to answer the given instruction are treated as positives, while all other regions are treated as negatives. The loss function pulls the positive pair (Et, Ev pos) closer in the embedding space, while pushing away the negative pairs (Et, Ev neg,i).",
+      "page": 4,
+      "index": 7,
+      "width": 496,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22815v1/fig-008.webp",
+      "caption": "Figure 5. (a) Built upon existing VQA benchmarks, such as InfoVQA [33], SPDocVQA [32], and MPDocVQA [39], we construct a new dataset using a pipeline that provides annotations of instruction-relevant regions likely to contain answers and supporting evidence. (b) Examples of the annotated regions. More examples are available in the supplemental material.",
+      "page": 5,
+      "index": 8,
+      "width": 1004,
+      "height": 300
+    }
+  ]
+}

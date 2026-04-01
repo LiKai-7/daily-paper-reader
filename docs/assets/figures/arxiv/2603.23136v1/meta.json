@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-001.webp",
+      "caption": "Figure 6: Main figure explaining the proposed Z-NERD algorithm. For TCQK, multi-head for each convolution has been shown as single head for simplicity. B refers to begin entity, I refers to inside entity and O refers to outside entity.",
+      "page": 25,
+      "index": 1,
+      "width": 829,
+      "height": 841
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-002.webp",
+      "caption": "Figure 7: Main figure of proposed HGNet illustrating all proposed components. For clarity, we omit Lregression, since it is simply a regression loss applied over the graph topology, similar in nature to standard losses such as mean squared error or binary cross entropy.",
+      "page": 26,
+      "index": 2,
+      "width": 829,
+      "height": 969
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-003.webp",
+      "caption": "Figure 1: Continuous axis of abstraction for topics in physics.",
+      "page": 15,
+      "index": 3,
+      "width": 826,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-004.webp",
+      "caption": "Table 2: Rel+ F1 scores (%) of different models on SciERC, SciER, BioRED, and SemEval 2017 for two relation types (Hierarchical and Peer), along with overall F1 across all relation types. For BioRED, which only has Peer relations, the overall score equals the peer score. The same entity prediction method is used across models for fair comparison. All values are rounded to two decimals.",
+      "page": 10,
+      "index": 4,
+      "width": 824,
+      "height": 341
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-005.webp",
+      "caption": "Figure 2: Average Orthogonal Semantic Velocity for tokens at entity boundaries (’Start’/’End’) vs. ’Non-entity’ tokens for SPHERE-CS (left) and SciER (right). The clear separation provides visual evidence for Hypothesis 3.1.",
+      "page": 18,
+      "index": 5,
+      "width": 818,
+      "height": 284
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-006.webp",
+      "caption": "Figure 4: Example of physics domain hierarchical knowledge graph. Hierarchy radially extends outward.",
+      "page": 23,
+      "index": 6,
+      "width": 826,
+      "height": 400
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-007.webp",
+      "caption": "Figure 3: Distribution of abstraction scores across different scientific domains, showing distinct patterns for each field.",
+      "page": 19,
+      "index": 7,
+      "width": 826,
+      "height": 573
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-008.webp",
+      "caption": "Table 10: Efficiency Landscape on SciERC (A30 GPU, Batch=8). GFLOPs are estimated per input instance. HGNet (Full Pipeline) provides superior throughput compared to pipeline-based SOTA models despite robust parameter capacity.",
+      "page": 27,
+      "index": 8,
+      "width": 718,
+      "height": 305
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-009.webp",
+      "caption": "Figure 5: Loss plot of HGNet on computer science SPHERE dataset.",
+      "page": 24,
+      "index": 9,
+      "width": 826,
+      "height": 500
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-010.webp",
+      "caption": "Table 1: F1 scores (%) of different models on NER benchmarks. SPHERE: CS, Physics, Bio, MS report both supervised (Sup) and zero-shot (ZS) results. OSD refers to orthogonal semantic decomposition. Z-NERD w/o OSD and w/o TCQK refer to ablations.",
+      "page": 9,
+      "index": 10,
+      "width": 830,
+      "height": 221
+    },
+    {
+      "url": "assets/figures/arxiv/2603.23136v1/fig-011.webp",
+      "caption": "Table 5: Key hyperparameters for Z-NERD and HGNet.",
+      "page": 16,
+      "index": 11,
+      "width": 664,
+      "height": 315
+    }
+  ]
+}
