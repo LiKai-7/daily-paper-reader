@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.26076v1/fig-001.webp",
+      "caption": "Fig. 4. Swimlane Diagram for the Airport Collaborative Decision-Making Process",
+      "page": 5,
+      "index": 1,
+      "width": 474,
+      "height": 329
+    }
+  ]
+}

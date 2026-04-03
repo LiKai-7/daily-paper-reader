@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.25107v1/fig-001.webp",
+      "caption": "Figure 1. Fixed rules vs. adaptive strategy in multimodal active learning. The unlabeled pool contains items with different difficulty levels and different dominant modality. Left (1–2): fixed strategies keep selecting hard, dominant-modality samples and do not adjust when the value of each modality or the difficulty of samples changes across rounds. Right (3–4): an adaptive strategy reweights modality contributions and difficulty, yielding more balanced, budget-efficient batches.",
+      "page": 1,
+      "index": 1,
+      "width": 446,
+      "height": 442
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25107v1/fig-002.webp",
+      "caption": "Table 1. Top-1 Accuracy on multimodal datasets with 3,000 labelled samples. This corresponds to 6.6% of Food101, 20.4% of KineticsSound, and 2.9% of VGGSound training sets.",
+      "page": 6,
+      "index": 2,
+      "width": 452,
+      "height": 274
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25107v1/fig-003.webp",
+      "caption": "Figure 5. Performance comparison between the proposed method and other conventional AL strategies on Food101, KineticsSound, and VGGSound. The metric selected is top-1 accuracy (Top-1) on multimodal and unimodal classification.",
+      "page": 7,
+      "index": 3,
+      "width": 976,
+      "height": 489
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25107v1/fig-004.webp",
+      "caption": "Figure 7. Combined ablation and reward analysis. (a) Ablation on KineticsSound comparing BMMAL, RL-MBA w/ AMCB, RLMBA w/ EFDA, and RL-MBA (Full). (b) Reward settings on Food101 comparing Relative, Absolute, and Incremental rewards.",
+      "page": 8,
+      "index": 4,
+      "width": 433,
+      "height": 502
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25107v1/fig-005.webp",
+      "caption": "Figure 2. Overview of RL-MBA. Each round consists of (1) multimodal fusion and clustering, (2) evidential uncertainty and difficulty estimation, (3) scoring to form a candidate set, (4) policy-based set selection, (5) retraining, and (6) reward and policy update.",
+      "page": 4,
+      "index": 5,
+      "width": 1038,
+      "height": 421
+    },
+    {
+      "url": "assets/figures/arxiv/2603.25107v1/fig-006.webp",
+      "caption": "Figure 3. Core components. (a) AMCB updates simplex weights w from round-level modality gains. (b) EFDA fuses Dirichlet evidence to obtain calibrated uncertainty/difficulty; the RL reward updates the selection policy (and optionally uncertainty heads if enabled in implementation).",
+      "page": 5,
+      "index": 6,
+      "width": 496,
+      "height": 654
+    }
+  ]
+}
