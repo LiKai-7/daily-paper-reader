@@ -1,0 +1,214 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-001.webp",
+      "caption": "Figure 6: Illustration of the audio tokenizer framework.",
+      "page": 11,
+      "index": 1,
+      "width": 784,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-002.webp",
+      "caption": "Figure 25: The effect of visual de-tokenizer about the pixel decoder and refiner module.",
+      "page": 43,
+      "index": 2,
+      "width": 949,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-003.webp",
+      "caption": "Figure 14: Left: The data curation and training process consists of three stages: (I) Pre-training with filtering and recaptioning for basic alignment; (II) Mid-training with semantic clustering and rebalancing to address data imbalance; (III) Supervised Fine-Tuning on high-quality, instruction-following data for improved aesthetics and text rendering. Right: The distribution of image sources.",
+      "page": 25,
+      "index": 3,
+      "width": 758,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-004.webp",
+      "caption": "Figure 18: Training metrics comparison in RL.",
+      "page": 38,
+      "index": 4,
+      "width": 976,
+      "height": 190
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-005.webp",
+      "caption": "Fig. 15, this strategy is realized through three complementary data sources: large-scale web audio, synthetic speech-text data, and curated task-specific datasets for abilities such as paralinguistic perception and audio-event understanding that are less accessible from naturally collected web audio.",
+      "page": 26,
+      "index": 5,
+      "width": 978,
+      "height": 419
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-006.webp",
+      "caption": "Table 2: Comparison with specialized T2I models. Despite significantly smaller model, our model achieves competitive performance across multiple benchmarks, demonstrating strong industrial-level generation capability. Values marked with * are sourced from public reports.",
+      "page": 15,
+      "index": 6,
+      "width": 968,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-007.webp",
+      "caption": "Figure 12: Modality-aware feature distribution divergence: a comparison of traditional Qwen2.5-VL, data-nativetraining Qwen3.5, and our architectural native modality with LongCat-Next.",
+      "page": 21,
+      "index": 7,
+      "width": 882,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-008.webp",
+      "caption": "Figure 3: Overview of the discrete Native-Resolution Vision Transformer (dNaViT) design.",
+      "page": 7,
+      "index": 8,
+      "width": 972,
+      "height": 368
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-009.webp",
+      "caption": "Table 9: Image Understanding and image generation performance based on Qwen-7B.",
+      "page": 39,
+      "index": 9,
+      "width": 920,
+      "height": 307
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-010.webp",
+      "caption": "Figure 19: Comparison of feature reconstruction loss across different discrete quantization strategies.",
+      "page": 39,
+      "index": 10,
+      "width": 591,
+      "height": 222
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-011.webp",
+      "caption": "Figure 20: A unified tokenizer and detokenizer for both understanding and generation within the DiNA paradigm.",
+      "page": 39,
+      "index": 11,
+      "width": 769,
+      "height": 258
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-012.webp",
+      "caption": "Table 7: Detailed training stages, configurations, and data for V (Visual), A (Audio), and T (Text) Modalities.",
+      "page": 22,
+      "index": 12,
+      "width": 561,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-013.webp",
+      "caption": "Figure 5: Visual reconstruction from different frozen vision encoders, trained with a lightweight pixel decoder. The results suggest that residual connections inherently preserve a latent pathway for low-level signal propagation.",
+      "page": 10,
+      "index": 13,
+      "width": 929,
+      "height": 410
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-014.webp",
+      "caption": "Figure 8: The understanding and generation cases of LongCat-Next at arbitrary resolution.",
+      "page": 14,
+      "index": 14,
+      "width": 976,
+      "height": 620
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-015.webp",
+      "caption": "Figure 24: Two examples of LongCat-Next solving geometric problems. The top panel demonstrates the model’s ability to deduce square areas through nested geometric relationships, while the bottom panel highlights its capacity to decompose a complex quadrilateral into triangles and verify right-angle properties to calculate the total area.",
+      "page": 42,
+      "index": 15,
+      "width": 881,
+      "height": 452
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-016.webp",
+      "caption": "Figure 23: Two examples of LongCat-Next solving complex mathematical logic puzzles through multi-step reasoning. The top panel showcases the model’s ability to identify arithmetic patterns within a cross-shaped visual structure to deduce a missing number. The bottom panel illustrates advanced spatial reasoning and constraint satisfaction, where the model systematically tests different hypotheses to deduce the correct placement of digits in a 3x3 grid and calculate the required sum.",
+      "page": 42,
+      "index": 16,
+      "width": 881,
+      "height": 494
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-017.webp",
+      "caption": "Figure 9: L: Loss comparison on pre-align stage. R: Performance comparison of discrete and continuous versions.",
+      "page": 18,
+      "index": 17,
+      "width": 987,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-018.webp",
+      "caption": "Figure 16: Infra training pipeline designed for LongCat-Next.",
+      "page": 28,
+      "index": 18,
+      "width": 976,
+      "height": 311
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-019.webp",
+      "caption": "Figure 21: Qualitative results of mathematical text and formula recognition. The layout explicitly places the source image and initial text on the left, continuing the long derivation on the right.",
+      "page": 40,
+      "index": 19,
+      "width": 979,
+      "height": 1133
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-020.webp",
+      "caption": "Figure 10: Visual understanding and generation interaction under DiNA framework.",
+      "page": 19,
+      "index": 20,
+      "width": 976,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-021.webp",
+      "caption": "Table 4: Comparison of LongCat-Next and top-tier models on audio benchmarks.Values marked with * are sourced from public reports.",
+      "page": 17,
+      "index": 21,
+      "width": 977,
+      "height": 601
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-022.webp",
+      "caption": "Figure 7: Two speech generation strategies with internal linguistic guidance. The user’s input audio is treated as a pure audio modality, whereas the output generated by Longcat-Next (or the assistant) is regarded as a text-guided audio modality. To indicate modality conversion and facilitate segment alignment, we introduce three special tokens: AS (Audio Start), AE (Audio End), and TE (Text End), which respectively denote the beginning and end of an audio segment, and the end of a text segment.",
+      "page": 12,
+      "index": 22,
+      "width": 597,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-023.webp",
+      "caption": "Figure 22: Our model is capable of producing formatted outputs and performing numerical comparisons in the OCR recognition phase, thereby enhancing the accuracy and interpretability of the recognition results.",
+      "page": 41,
+      "index": 23,
+      "width": 866,
+      "height": 1190
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-024.webp",
+      "caption": "Figure 11: Training dynamics of modality-agnostic MoE before and after multimodal training. Left: token distribution across experts. Right: the emergence of modality-specialized roles within an initially modality-agnostic MoE.",
+      "page": 20,
+      "index": 24,
+      "width": 786,
+      "height": 458
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-025.webp",
+      "caption": "Figure 2: Overview of the LongCat-Next architecture, designed under a Discrete Native Autoregression (DiNA) paradigm that extends multimodality into a native language-style modeling framework via paired tokenizers.",
+      "page": 5,
+      "index": 25,
+      "width": 976,
+      "height": 543
+    },
+    {
+      "url": "assets/figures/arxiv/2603.27538v1/fig-026.webp",
+      "caption": "Table 3: Comparison with unified multimodal models. We evaluate across both understanding and generation benchmarks. Our model (LongCat-Next) consistently outperforms prior unified approaches across most generation benchmarks while maintaining highly competitive understanding capabilities, establishing a new state-of-the-art for unified generation-understanding models. All results are from public reports.",
+      "page": 16,
+      "index": 26,
+      "width": 974,
+      "height": 343
+    }
+  ]
+}

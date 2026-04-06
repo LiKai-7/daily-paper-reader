@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.02617v1/fig-001.webp",
+      "caption": "Table 3: Overclaim detection: claims vs. supporting evidence in the target paper.",
+      "page": 9,
+      "index": 1,
+      "width": 976,
+      "height": 404
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02617v1/fig-002.webp",
+      "caption": "Table 1: Examples of extracted claim triples with provenance classification and intra-document verification.",
+      "page": 8,
+      "index": 2,
+      "width": 976,
+      "height": 377
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02617v1/fig-003.webp",
+      "caption": "Table 5: Example hypothesis matrix for the runtime quantum advantage claim.",
+      "page": 12,
+      "index": 3,
+      "width": 977,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02617v1/fig-004.webp",
+      "caption": "Table 4: Cross-source contradiction: target paper vs. two independent evaluations.",
+      "page": 10,
+      "index": 4,
+      "width": 976,
+      "height": 518
+    }
+  ]
+}

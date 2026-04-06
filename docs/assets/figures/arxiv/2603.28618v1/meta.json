@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-001.webp",
+      "caption": "Figure 15: Qualitative example of PRCO-7B on diagram-grounded geometry reasoning. The Observer localizes points, coordinates, and segment relations from the diagram, and the Solver then uses this structured evidence to derive ∠BOA, OC, and AB.",
+      "page": 21,
+      "index": 1,
+      "width": 950,
+      "height": 1202
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-002.webp",
+      "caption": "Table 3: Details of the benchmarks we evaluate. The evaluation splits and reported metrics follow the settings in VLMEvalKit (Duan et al., 2024). We report single-sample greedy scores under each benchmark’s official VLMEvalKit metric, which we denote as accuracy for simplicity.",
+      "page": 14,
+      "index": 2,
+      "width": 950,
+      "height": 246
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-003.webp",
+      "caption": "Figure 2: Overview of PRCO. A shared policy alternates between an Observer for question-conditioned evidence captioning and a Solver for evidence-conditioned reasoning. The two roles are jointly optimized with role-specific learning signals and group-relative advantages, enabling perception–reasoning coevolution under a shared policy.",
+      "page": 3,
+      "index": 3,
+      "width": 945,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-004.webp",
+      "caption": "Figure 12: Qualitative example of PRCO-7B on synthetic object filtering. The Observer enumerates the relevant objects together with size, color, material, shape, and coarse spatial cues, converting the scene into a questionconditioned object inventory. PRCO performs discrete filtering and counting from explicit visual evidence.",
+      "page": 18,
+      "index": 4,
+      "width": 950,
+      "height": 1123
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-005.webp",
+      "caption": "Figure 7: Qualitative analysis of PRCO-7B on two representative cases. For each case, we show the Observer output together with an attention overlay obtained by averaging attention to image tokens across all layers.",
+      "page": 8,
+      "index": 5,
+      "width": 443,
+      "height": 286
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-006.webp",
+      "caption": "Figure 13: Qualitative example of PRCO-7B on bar-chart threshold counting. The Observer transcribes item-wise values across stores into explicit textual evidence, and the Solver then checks the threshold condition and aggregates over items. PRCO supports accurate chart value extraction and evidence-conditioned counting through a compact intermediate representation.",
+      "page": 19,
+      "index": 6,
+      "width": 950,
+      "height": 1202
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-007.webp",
+      "caption": "Figure 11: Prompt templates for leakage checking and error-type classification.",
+      "page": 17,
+      "index": 7,
+      "width": 950,
+      "height": 1300
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-008.webp",
+      "caption": "Figure 14: Qualitative example of PRCO-7B on table-based option selection. The Observer extracts only the question-relevant entries in the Rec column, rather than transcribing the full table, after which the Solver identifies the maximum and maps it to the correct answer option. PRCO focuses on question-relevant evidence while avoiding unnecessary visual details.",
+      "page": 20,
+      "index": 8,
+      "width": 950,
+      "height": 1033
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-009.webp",
+      "caption": "Table 1: Main results on eight multimodal reasoning benchmarks with Qwen2.5-VL-3B and Qwen2.5-VL-7B backbones. We report benchmark scores on math-related benchmarks, general-task benchmarks, and their overall average. The best and second-best results within each backbone are highlighted in bold and underlined, respectively.",
+      "page": 5,
+      "index": 9,
+      "width": 950,
+      "height": 593
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28618v1/fig-010.webp",
+      "caption": "Figure 10: Training and inference prompt templates of the PRCO Observer and Solver, GRPO, and DAPO.",
+      "page": 16,
+      "index": 10,
+      "width": 950,
+      "height": 1092
+    }
+  ]
+}
