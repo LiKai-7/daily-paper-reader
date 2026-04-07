@@ -6,91 +6,86 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-06
-- 运行时间：2026-04-06 20:15:05 UTC
+- 最新运行日期：2026-04-07
+- 运行时间：2026-04-07 20:17:04 UTC
 - 运行状态：成功
-- 本次总论文数：23
-- 精读区：11
+- 本次总论文数：21
+- 精读区：9
 - 速读区：12
 
 ### 今日简报（AI）
-今日深挖多模态知识图谱前沿，重点攻克持续学习与模态-拓扑协同演化等 23 项核心进展。
-满分论文揭示了多模态记忆机制在知识图谱中的关键作用，TMTE 框架则通过任务感知实现了模态与拓扑的高效融合。
-建议优先研读多模态持续学习与感知-推理协同进化方向，探索知识图谱在复杂问答中的深度应用。
-- 详情：[/202604/06/README](/202604/06/README)
+- 今日共生成 21 篇推荐（精读 9 篇，速读 12 篇）
+- 精读：《GraphWalker: Agentic Knowledge Graph Question Answering via Synthetic Trajectory Curriculum》（10.0/10）, 《When Modalities Remember: Continual Learning for Multimodal Knowledge Graphs》（10.0/10）
+- 速读：《DeepEye: A Steerable Self-driving Data Agent System》（8.0/10）, 《MOON3.0: Reasoning-aware Multimodal Representation Learning for E-commerce Product Understanding》（8.0/10）, 《Doctor-RAG: Failure-Aware Repair for Agentic Retrieval-Augmented Generation》（8.0/10）
+- 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
+- 详情：[/202604/07/README](/202604/07/README)
 
 ### 精读区论文标签
-1. [When Modalities Remember: Continual Learning for Multimodal Knowledge Graphs](/202604/06/2604.02778v1-when-modalities-remember-continual-learning-for-multimodal-knowledge-graphs)  
+1. [GraphWalker: Agentic Knowledge Graph Question Answering via Synthetic Trajectory Curriculum](/202604/07/2603.28533v2-graphwalker-agentic-knowledge-graph-question-answering-via-synthetic-trajectory-curriculum)  
+   标签：评分：10.0/10、query:mmkgc-llm
+   evidence：通过合成轨迹课程实现智能体知识图谱问答
+2. [When Modalities Remember: Continual Learning for Multimodal Knowledge Graphs](/202604/07/2604.02778v1-when-modalities-remember-continual-learning-for-multimodal-knowledge-graphs)  
    标签：评分：10.0/10、query:mmkgc
-   evidence：持续多模态知识图谱推理与补全
-2. [TMTE: Effective Multimodal Graph Learning with Task-aware Modality and Topology Co-evolution](/202604/06/2603.27723v1-tmte-effective-multimodal-graph-learning-with-task-aware-modality-and-topology-co-evolution)  
+   evidence：基于多模态-结构协同课程的持续多模态知识图谱推理
+3. [Beyond Predefined Schemas: TRACE-KG for Context-Enriched Knowledge Graphs from Complex Documents](/202604/07/2604.03496v1-beyond-predefined-schemas-trace-kg-for-context-enriched-knowledge-graphs-from-complex-documents)  
    标签：评分：9.0/10、query:mmkgc
-   evidence：多模态图学习中的模态与拓扑协同演化
-3. [MuSEAgent: A Multimodal Reasoning Agent with Stateful Experiences](/202604/06/2603.27813v1-museagent-a-multimodal-reasoning-agent-with-stateful-experiences)  
+   evidence：用于上下文增强知识图谱构建的多模态框架
+4. [MMP-Refer: Multimodal Path Retrieval-augmented LLMs For Explainable Recommendation](/202604/07/2604.03666v1-mmp-refer-multimodal-path-retrieval-augmented-llms-for-explainable-recommendation)  
    标签：评分：9.0/10、query:mmkgc-llm
-   evidence：结合异构文本和视觉源的多模态推理智能体
-4. [GAAMA: Graph Augmented Associative Memory for Agents](/202604/06/2603.27910v1-gaama-graph-augmented-associative-memory-for-agents)  
+   evidence：用于推荐的多模态路径检索增强大语言模型
+5. [FunFact: Building Probabilistic Functional 3D Scene Graphs via Factor-Graph Reasoning](/202604/07/2604.03696v1-funfact-building-probabilistic-functional-3d-scene-graphs-via-factor-graph-reasoning)  
    标签：评分：9.0/10、query:mmkgc-llm
-   evidence：为智能体构建基于层次化知识图谱的图增强关联记忆
-5. [SCPatcher: Automated Smart Contract Code Repair via Retrieval-Augmented Generation and Knowledge Graph](/202604/06/2604.00687v1-scpatcher-automated-smart-contract-code-repair-via-retrieval-augmented-generation-and-knowledge-graph)  
+   evidence：通过因子图推理构建概率功能性 3D 场景图
+6. [SGTA: Scene-Graph Based Multi-Modal Traffic Agent for Video Understanding](/202604/07/2604.03697v1-sgta-scene-graph-based-multi-modal-traffic-agent-for-video-understanding)  
    标签：评分：9.0/10、query:mmkgc-llm
-   evidence：结合检索增强生成与知识图谱以增强大模型推理
-6. [Competency Questions as Executable Plans: a Controlled RAG Architecture for Cultural Heritage Storytelling](/202604/06/2604.02545v1-competency-questions-as-executable-plans-a-controlled-rag-architecture-for-cultural-heritage-storytelling)  
+   evidence：结合结构化场景图与多模态推理及工具化查询
+7. [Schema-Aware Planning and Hybrid Knowledge Toolset for Reliable Knowledge Graph Triple Verification](/202604/07/2604.04190v1-schema-aware-planning-and-hybrid-knowledge-toolset-for-reliable-knowledge-graph-triple-verification)  
    标签：评分：9.0/10、query:mmkgc-llm
-   evidence：基于知识图谱的神经符号架构用于规划
-7. [AutoVerifier: An Agentic Automated Verification Framework Using Large Language Models](/202604/06/2604.02617v1-autoverifier-an-agentic-automated-verification-framework-using-large-language-models)  
+   evidence：基于智能体规划的知识图谱三元组验证
+8. [GROUNDEDKG-RAG: Grounded Knowledge Graph Index for Long-document Question Answering](/202604/07/2604.04359v1-groundedkg-rag-grounded-knowledge-graph-index-for-long-document-question-answering)  
    标签：评分：9.0/10、query:mmkgc-llm
-   evidence：构建知识图谱用于结构化推理和声明验证的智能体框架
-8. [LLM+Graph@VLDB'2025 Workshop Summary](/202604/06/2604.02861v1-llmgraphvldb2025-workshop-summary)  
+   evidence：用于检索增强生成和问答的落地知识图谱索引
+9. [Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](/202604/07/2604.04372v1-graph-to-frame-rag-visual-space-knowledge-fusion-for-training-free-and-auditable-video-reasoning)  
    标签：评分：9.0/10、query:mmkgc-llm
-   evidence：连接大模型、图数据管理与图机器学习
-9. [LogicPoison: Logical Attacks on Graph Retrieval-Augmented Generation](/202604/06/2604.02954v1-logicpoison-logical-attacks-on-graph-retrieval-augmented-generation)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：针对基于图的检索增强生成（GraphRAG）的逻辑攻击
-10. [AlertStar: Path-Aware Alert Prediction on Hyper-Relational Knowledge Graphs](/202604/06/2604.03104v1-alertstar-path-aware-alert-prediction-on-hyper-relational-knowledge-graphs)  
-   标签：评分：9.0/10、query:mmkgc
-   evidence：用于告警预测的超关系知识图谱补全
-11. [Beyond the Parameters: A Technical Survey of Contextual Enrichment in Large Language Models: From In-Context Prompting to Causal Retrieval-Augmented Generation](/202604/06/2604.03174v1-beyond-the-parameters-a-technical-survey-of-contextual-enrichment-in-large-language-models-from-in-context-prompting-to-causal-retrieval-augmented-generation)  
-   标签：评分：9.0/10、query:mmkgc-llm
-   evidence：涵盖图检索增强生成与大模型结构化上下文的综述
+   evidence：用于多模态推理和检索增强生成的视频知识图谱
 
 ### 速读区论文标签
-1. [GEAKG: Generative Executable Algorithm Knowledge Graphs](/202604/06/2603.27922v1-geakg-generative-executable-algorithm-knowledge-graphs)  
+1. [DeepEye: A Steerable Self-driving Data Agent System](/202604/07/2603.28889v1-deepeye-a-steerable-self-driving-data-agent-system)  
    标签：评分：8.0/10、query:mmkgc-llm
-   evidence：大模型合成的用于程序性知识和算法执行的知识图谱
-2. [Seeing with You: Perception-Reasoning Coevolution for Multimodal Reasoning](/202604/06/2603.28618v1-seeing-with-you-perception-reasoning-coevolution-for-multimodal-reasoning)  
+   evidence：自主数据智能体的多模态编排
+2. [MOON3.0: Reasoning-aware Multimodal Representation Learning for E-commerce Product Understanding](/202604/07/2604.00513v1-moon30-reasoning-aware-multimodal-representation-learning-for-e-commerce-product-understanding)  
    标签：评分：8.0/10、query:mmkgc-llm
-   evidence：多模态大模型推理与感知-推理协同演化
-3. [Calibrated Fusion for Heterogeneous Graph-Vector Retrieval in Multi-Hop QA](/202604/06/2603.28886v1-calibrated-fusion-for-heterogeneous-graph-vector-retrieval-in-multi-hop-qa)  
+   evidence：感知推理的多模态表示学习，用于细粒度属性建模
+3. [Doctor-RAG: Failure-Aware Repair for Agentic Retrieval-Augmented Generation](/202604/07/2604.00865v1-doctor-rag-failure-aware-repair-for-agentic-retrieval-augmented-generation)  
    标签：评分：8.0/10、query:mmkgc-llm
-   evidence：用于多跳问答的图增强检索与融合
-4. [Is One Token All It Takes? Graph Pooling Tokens for LLM-based GraphQA](/202604/06/2604.00342v1-is-one-token-all-it-takes-graph-pooling-tokens-for-llm-based-graphqa)  
+   evidence：用于复杂知识推理和故障修复的智能体RAG
+4. [Experience as a Compass: Multi-agent RAG with Evolving Orchestration and Agent Prompts](/202604/07/2604.00901v1-experience-as-a-compass-multi-agent-rag-with-evolving-orchestration-and-agent-prompts)  
    标签：评分：8.0/10、query:mmkgc-llm
-   evidence：GNN 与 LLM 集成用于图问答
-5. [SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](/202604/06/2603.27437v1-spatialstack-layered-geometry-language-fusion-for-3d-vlm-spatial-reasoning)  
+   evidence：具有演化编排的多智能体RAG用于复杂推理
+5. [When Choices Become Priors: Contrastive Decoding for Scientific Figure Multiple-Choice QA](/202604/07/2603.28026v1-when-choices-become-priors-contrastive-decoding-for-scientific-figure-multiple-choice-qa)  
    标签：评分：7.0/10、query:mmkgc-llm
-   evidence：用于3D视觉语言模型空间推理的分层融合
-6. [Learning to See through Illumination Extremes with Event Streaming in Multimodal Large Language Models](/202604/06/2603.27558v1-learning-to-see-through-illumination-extremes-with-event-streaming-in-multimodal-large-language-models)  
+   evidence：科学图表问答的多模态推理
+6. [ToLL: Topological Layout Learning with Structural Multi-view Augmentation for 3D Scene Graph Pretraining](/202604/07/2603.28178v1-toll-topological-layout-learning-with-structural-multi-view-augmentation-for-3d-scene-graph-pretraining)  
    标签：评分：7.0/10、query:mmkgc
-   evidence：多模态大模型中事件流与RGB帧的跨模态融合
-7. [CrossHGL: A Text-Free Foundation Model for Cross-Domain Heterogeneous Graph Learning](/202604/06/2603.27685v1-crosshgl-a-text-free-foundation-model-for-cross-domain-heterogeneous-graph-learning)  
-   标签：评分：7.0/10、query:mmkgc
-   evidence：异构图表示学习
-8. [CARV: A Diagnostic Benchmark for Compositional Analogical Reasoning in Multimodal LLMs](/202604/06/2603.27958v1-carv-a-diagnostic-benchmark-for-compositional-analogical-reasoning-in-multimodal-llms)  
+   evidence：结合跨模态辅助表示学习的3D场景图预训练
+7. [Entropic Claim Resolution: Uncertainty-Driven Evidence Selection for RAG](/202604/07/2603.28444v1-entropic-claim-resolution-uncertainty-driven-evidence-selection-for-rag)  
    标签：评分：7.0/10、query:mmkgc-llm
-   evidence：多模态大模型的组合类比推理
-9. [Demo-Pose: Depth-Monocular Modality Fusion For Object Pose Estimation](/202604/06/2603.27533v1-demo-pose-depth-monocular-modality-fusion-for-object-pose-estimation)  
-   标签：评分：6.0/10、query:mmkgc
-   evidence：单目语义特征与基于深度的图表示的跨模态融合
-10. [LongCat-Next: Lexicalizing Modalities as Discrete Tokens](/202604/06/2603.27538v1-longcat-next-lexicalizing-modalities-as-discrete-tokens)  
-   标签：评分：6.0/10、query:mmkgc
-   evidence：通过离散标记进行跨模态融合的统一框架
-11. [LVRPO: Language-Visual Alignment with GRPO for Multimodal Understanding and Generation](/202604/06/2603.27693v1-lvrpo-language-visual-alignment-with-grpo-for-multimodal-understanding-and-generation)  
-   标签：评分：6.0/10、query:mmkgc
-   evidence：语言-视觉对齐与跨模态推理
-12. [MAR3: Multi-Agent Recognition, Reasoning, and Reflection for Reference Audio-Visual Segmentation](/202604/06/2603.27706v1-mar3-multi-agent-recognition-reasoning-and-reflection-for-reference-audio-visual-segmentation)  
+   evidence：RAG推理中基于不确定性的证据选择
+8. [Hydra: Unifying Document Retrieval and Generation in a Single Vision-Language Model](/202604/07/2603.28554v1-hydra-unifying-document-retrieval-and-generation-in-a-single-vision-language-model)  
+   标签：评分：7.0/10、query:mmkgc-llm
+   evidence：在视觉语言模型中统一文档检索与生成
+9. [Learning Multi-View Spatial Reasoning from Cross-View Relations](/202604/07/2603.27967v1-learning-multi-view-spatial-reasoning-from-cross-view-relations)  
    标签：评分：6.0/10、query:mmkgc-llm
-   evidence：用于音视频分割的多智能体推理和多模态线索
+   evidence：多视图空间推理与跨视图关系
+10. [Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](/202604/07/2603.27969v1-hg-i2p-bridging-modalities-for-generalizable-image-to-point-cloud-registration-via-heterogeneous-graphs)  
+   标签：评分：6.0/10、query:mmkgc
+   evidence：用于跨模态特征交互和配准的异构图
+11. [Progressive Prompt-Guided Cross-Modal Reasoning for Referring Image Segmentation](/202604/07/2603.27993v1-progressive-prompt-guided-cross-modal-reasoning-for-referring-image-segmentation)  
+   标签：评分：6.0/10、query:mmkgc-llm
+   evidence：桥接语言和视觉表示的跨模态推理
+12. [HeteroHub: An Applicable Data Management Framework for Heterogeneous Multi-Embodied Agent System](/202604/07/2603.28010v1-heterohub-an-applicable-data-management-framework-for-heterogeneous-multi-embodied-agent-system)  
+   标签：评分：6.0/10、query:mmkgc-llm
+   evidence：集成静态知识、多模态训练数据集和智能体协作
 
 
 <div class="dpr-home-promo-card">

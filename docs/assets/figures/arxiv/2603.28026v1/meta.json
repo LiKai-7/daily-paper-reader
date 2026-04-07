@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-001.webp",
+      "caption": "Figure 3: A MAC case where greedy decoding selects a text-prior-dominant distractor (Option A). The text-only branch assigns overwhelming probability to A, and the multimodal branch remains biased toward the same incorrect choice. After subtracting the text-only prior, SCICON suppresses A and recovers the visually grounded correct answer (Option B).",
+      "page": 15,
+      "index": 1,
+      "width": 832,
+      "height": 799
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-002.webp",
+      "caption": "Table 3: Category-wise accuracy (%) on MMSci with the Qwen3.5-9B backbone. SCICON achieves the highest accuracy in four of the five scientific categories, while ICD performs best in Scientific community and society.",
+      "page": 7,
+      "index": 2,
+      "width": 826,
+      "height": 246
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-003.webp",
+      "caption": "Table 8: Distribution of gold answer labels across datasets. MAC and SciFIBench are relatively balanced, while MMSci shows a long-tailed distribution concentrated on early option indices.",
+      "page": 14,
+      "index": 3,
+      "width": 827,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-004.webp",
+      "caption": "Figure 1: An MMSci example where both text-only and multimodal decoding favor a plausible distractor (Option C). SCICON suppresses this text-driven bias and recovers the visually grounded correct answer (Option B).",
+      "page": 3,
+      "index": 4,
+      "width": 829,
+      "height": 552
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-005.webp",
+      "caption": "Table 10: Detailed category-wise accuracy (%) on SciFIBench with the Qwen3.5-9B backbone. SciFIBench consists of two subsets: General Science and Computer Science (CS). SCICON achieves the best overall accuracy in both subsets, while performance on individual categories varies by baseline.",
+      "page": 18,
+      "index": 5,
+      "width": 826,
+      "height": 982
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-006.webp",
+      "caption": "Table 4: Definitions of the four diagnostic quantities used in the analysis.",
+      "page": 8,
+      "index": 6,
+      "width": 827,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-007.webp",
+      "caption": "Table 1: Distances between multimodal and text-only answer distributions with Qwen3.5-4B backbone. Correct cases are farther from the text-only prior, showing higher JS divergence and lower cosine similarity.",
+      "page": 4,
+      "index": 7,
+      "width": 826,
+      "height": 205
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-008.webp",
+      "caption": "Table 7: Hyperparameter sensitivity of SCICON with respect to the subtraction weight α on Qwen3.5-4B. Performance is generally stable across a broad range of α values, although the best setting varies slightly by dataset.",
+      "page": 12,
+      "index": 8,
+      "width": 826,
+      "height": 278
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-009.webp",
+      "caption": "Table 5: Gold-answer recovery is the primary mechanism behind SCICON. Corrected cases show large gold uplift and strong visual evidence margins, whereas harmed cases show little (or negative) gold-specific visual advantage.",
+      "page": 9,
+      "index": 9,
+      "width": 826,
+      "height": 225
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-010.webp",
+      "caption": "Figure 2: Illustration of SCICON. Given a question and candidate answers, the model produces candidate scores under both multimodal and text-only inputs. SCICON subtracts the text-only score, scaled by α, from the multimodal score so that candidates favored mainly by textual prior are suppressed and visually grounded candidates are promoted.",
+      "page": 5,
+      "index": 10,
+      "width": 820,
+      "height": 458
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28026v1/fig-011.webp",
+      "caption": "Figure 4: A representative SciFIBench case where the text-only branch assigns overwhelming probability to a scientifically plausible distractor (Option C, p = 0.918), and the multimodal branch follows the same incorrect preference. By subtracting this text-only answer bias, SCICON shifts probability mass toward the visually grounded correct answer and recovers Option A (p = 0.870).",
+      "page": 16,
+      "index": 11,
+      "width": 829,
+      "height": 849
+    }
+  ]
+}

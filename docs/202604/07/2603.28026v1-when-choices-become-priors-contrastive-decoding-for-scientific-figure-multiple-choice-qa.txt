@@ -1,0 +1,590 @@
+Title: When Choices Become Priors: Contrastive Decoding for Scientific Figure Multiple-Choice QA
+
+URL Source: https://arxiv.org/pdf/2603.28026v1
+
+Published Time: Tue, 31 Mar 2026 02:23:04 GMT
+
+Number of Pages: 18
+
+Markdown Content:
+Preprint. Under review. 
+
+# When Choices Become Priors: Contrastive Decoding for Sci-entific Figure Multiple-Choice QA ∗
+
+Taeyun Roh 1 Eun-yeong Jo 2 Wonjune Jang 3 Jaewoo Kang 1,4† 1Korea University 2Konkuk University 3Myongji University 4AIGEN Sciences 
+
+nrbsld@korea.ac.kr tina0325@konkuk.ac.kr dnjswnswkd03@mju.ac.kr kangj@korea.ac.kr 
+
+# Abstract 
+
+Scientific figure multiple-choice question answering (MCQA) requires mod-els to reason over diverse visual evidence, ranging from charts and mul-tipanel figures to microscopy and biomedical images. However, this set-ting suffers from a distinctive bias: answer choices themselves can act as priors, steering multimodal models toward scientifically plausible op-tions even when the figure supports a different answer. We investigate this failure mode through a simple question: what if decoding explicitly discounts what the model would prefer from text alone, so as to favor figure-grounded evidence? To this end, we propose S CI CON , a training-free decoding method that scores each candidate by subtracting a text-only option score from its image-conditioned counterpart. Unlike prior con-trastive decoding approaches that mitigate hallucinations by contrasting original inputs with distorted images or perturbed instructions, S CI CON 
+
+directly targets the choice-induced prior encoded in candidate text. Across three scientific figure QA benchmarks and three model backbones, S CI CON 
+
+consistently improves accuracy over standard decoding baselines. These results show that decoding against choice-induced priors is an effective and simple way to improve figure-grounded reasoning in scientific MCQA. 
+
+# 1 Introduction 
+
+Scientific figures are a primary medium for communicating scientific evidence. Plots, microscopy panels, radiology images, symbolic diagrams, and multipanel experimental summaries often contain the central empirical claims of a paper in visual form(Hsu et al., 2021; Roberts et al., 2024). Building multimodal systems that can reliably interpret such figures is therefore important for a wide range of scientific applications, including literature understanding, evidence-grounded question answering, scientific search, and research assistance, where agentic systems increasingly rely on accurate grounding in scientific documents and their visual evidence (Baek et al., 2025; Schmidgall et al., 2025; Agarwal et al., 2025). Despite this importance, most progress in vision-language modeling has been driven by object-centric and general-domain benchmarks, where the dominant challenges are object recognition, captioning, and broad visual question answering (Lin et al., 2015; Agrawal et al., 2016; Hudson & Manning, 2019). As a result, scientific figure understanding remains relatively underexplored given its practical importance. Recent benchmarks (Roberts et al., 2024; Li et al., 2024b; Jiang et al., 2025) reveal that even advanced multimodal models struggle with scientific figure reasoning. Unlike object-centric natural-image tasks, scientific figures require interpreting trends, comparing panels, and mapping symbolic abstractions to domain-specific meanings. The challenge thus shifts from simple visual recognition to identifying which candidate answer is actually supported by the scientific evidence encoded in the figure. 
+
+> ∗
+
+Code is available at https://github.com/dmis-lab/SciCON .
+
+> †
+
+Corresponding author. 
+
+1
+
+> arXiv:2603.28026v1 [cs.AI] 30 Mar 2026
+
+Preprint. Under review. This setting is especially vulnerable to shortcut behavior in the multiple-choice regime. In scientific multiple-choice QA (MCQA), answer choices are not merely alternatives to rank; they often contain strong semantic and domain-specific cues that can themselves act as priors (Balepur et al., 2024). As a result, a model may prefer an option because it is scientifically plausible from text alone, even when the figure supports a different answer. We refer to this phenomenon as choice-induced prior bias . Its inference-time manifestation is what we call text-prior-dominant decoding : the final prediction remains overly aligned with what the model would answer from the question and choices alone, rather than with the visual evidence in the figure. Prior work has shown that vision-language models can over-rely on language priors and memorized associations instead of genuine visual reasoning (Luo et al., 2025; Vo et al., 2025; Sun et al., 2026). Related lines of work have also explored decoding-based methods for mitigating prior-driven failures and hallucinations in multimodal generation (Leng et al., 2024; Wang et al., 2024b; Park et al., 2024). However, while language-prior effects have been widely discussed in general multimodal settings, there has been limited analysis of how answer choices themselves induce bias in scientific figure QA, and even less work on inference-time methods designed specifically to counteract this failure mode. In this paper, we ask a simple question: what if decoding explicitly discounts what the model would prefer from text alone, so as to favor figure-grounded evidence? To answer this, we propose S CI CON (Sci entific Con trastive decoding), a simple training-free decoding method for scientific figure MCQA. For each candidate option, S CI CON computes an image-conditioned score and a text-only score, and subtracts the latter during final decision making. If a candidate is preferred mainly because it is textually or scientifically plausible, its score is reduced; if it is genuinely supported by the figure, it remains competitive after subtraction. Our contributions are threefold: • We identify choice-induced prior bias as a distinctive failure mode in scientific figure MCQA, where answer choices themselves act as priors and steer models toward semantically plausible distractors over visually grounded answers. • We propose S CI CON , a simple training-free contrastive decoding method that sub-tracts text-only answer preference from image-conditioned answer scores, thereby explicitly decoding against choice-induced prior bias. • Across three benchmarks and three model backbones, we show that S CI CON consis-tently improves accuracy. Our analysis further suggests that its primary mechanism is gold-answer recovery : it is most effective when the image-conditioned branch supports the correct answer but the text prior does not. 
+
+# 2 Related work 
+
+2.1 Improving Scientific Figure Understanding 
+
+Recent work on scientific figure understanding has advanced along two main directions: building benchmarks that expose the limitations of general-domain multimodal models, and adapting multimodal models to scientific imagery and reasoning. On the evaluation side, SciFIBench, MMSci, and MAC introduce benchmarks for scientific figure interpretation, multidisciplinary scientific reasoning, and live scientific cross-modal evaluation, respectively (Roberts et al., 2024; Li et al., 2024b; Jiang et al., 2025). On the modeling side, prior efforts have improved scientific figure understanding through domain-specific data construction and adaptation of general-purpose vision-language models (Li et al., 2023; 2024a; Lozano et al., 2025). Our work is complementary to these directions: rather than introducing a new benchmark or adapting model parameters, we focus on an inference-time decoding strategy for scientific MCQA. 2Preprint. Under review. 
+
+A B C D
+
+0
+
+0.5 
+
+1
+
+> 0.01
+> 0.24
+> 0.72
+> 0.03
+> 0.02
+> 0.04
+> 0.91
+> 0.04
+> 0.05
+> 0.55
+> 0.34
+> 0.07
+> Probability ( p)
+
+Comparison of Answer Distributions   
+
+> Multimodal Text-only SciCON
+
+Question: Which of the following captions best describes the whole figure? 
+
+Correct Answer: B 
+
+• Option A: Relative expression of Tet transcripts in development. • Option B (Gold): Increase of 5hmC in the maternal genome of zygotes derived from PGC7-null oocytes. • Option C: 5hmC preferentially appears in the paternal genome of early mouse preimplantation embryos. • Option D: 5hmC is present in rabbit and bovine zygotes. 
+
+Figure 1: An MMSci example where both text-only and multimodal decoding favor a plausible distractor (Option C). S CI CON suppresses this text-driven bias and recovers the visually grounded correct answer (Option B). 
+
+2.2 Choice Bias in Multiple-Choice Question Answering 
+
+Prior work on multiple-choice QA shows that predictions can be biased by answer-space artifacts rather than underlying evidence. In language-only and multimodal MCQA settings, prior studies have examined biases arising from answer-option artifacts, option ordering, and superficial answer plausibility, showing that models can exploit shortcuts in the candi-date set without performing the intended reasoning (Balepur et al., 2024; Zheng et al., 2024; Wang et al., 2024a; Atabuzzaman et al., 2025). Related work has also explored calibration, answer permutation, and debiasing strategies to reduce such effects at inference time(Zheng et al., 2024; Atabuzzaman et al., 2025). Our setting is related but distinct. Rather than positional bias among options, we focus on a stronger issue in scientific figure QA: answer choices often encode domain knowledge and scientifically plausible phrasing that act as priors. As a result, a model may favor a candidate from the question and choices alone, even when the figure supports another answer. To our knowledge, this choice-induced prior bias remains largely unexplored in scientific MCQA, with little work on decoding methods designed to suppress it. 
+
+2.3 Contrastive and Debiasing Decoding 
+
+Contrastive decoding has emerged as an effective training-free strategy for steering model predictions and suppressing undesirable behaviors (O’Brien & Lewis, 2023). In multimodal generation, much of this line of work has focused on hallucination reduction, especially failures where models mention objects or attributes that are not supported by the image. Visual Contrastive Decoding (VCD) addresses this problem by contrasting predictions under original and distorted visual inputs (Leng et al., 2024). Instruction Contrastive Decoding (ICD) instead perturbs the instruction side, contrasting standard prompts with disturbance instructions to reduce hallucination and prior-driven errors (Wang et al., 2024b). 3Preprint. Under review.                 
+
+> Dataset JS (Correct) JS (Wrong) Cosine (Correct) Cosine (Wrong) MAC 0.2477 0.1448 0.5559 0.7218
+> SciFIBench 0.1161 0.0728 0.7623 0.8253
+> MMSci 0.0870 0.0536 0.8005 0.8790
+
+Table 1: Distances between multimodal and text-only answer distributions with Qwen3.5-4B 
+
+backbone. Correct cases are farther from the text-only prior, showing higher JS divergence and lower cosine similarity. 
+
+# 3 Method 
+
+3.1 Problem Setting 
+
+We study scientific figure MCQA across three benchmark datasets. Each example consists of a scientific figure x, a question q, and a set of candidate answers C = {c1, . . . , cK }. The goal is to predict the correct answer y∗ ∈ C .Given a vision-language model, we define two answer distributions over the same candidate set. The first is the multimodal answer distribution, 
+
+pmm (c | x, q, C), (1) obtained by conditioning on the figure, question, and answer choices. The second is the corresponding text-only answer distribution, 
+
+ptxt (c | q, C), (2) obtained from the same input after removing the figure. Intuitively, pmm reflects the model’s preference when both visual and textual evidence are available, whereas ptxt captures the preference induced by textual evidence alone. 
+
+3.2 Preliminary Experiments 
+
+Our central hypothesis is that scientific figure QA suffers from a failure mode where the final prediction distribution pmm remains overly aligned with the text-only ptxt distribution. Ideally, the model should assign high probability to an answer because it is supported by the visual evidence in x. In practice, however, some candidate answers may already appear highly plausible from text alone due to domain-specific wording, semantic relatedness, or common scientific associations. As a result, the image-conditioned distribution pmm may remain too close to ptxt , and the final prediction may reflect answer plausibility rather than genuine figure grounding. We refer to this phenomenon as text-prior-dominant decoding. Formally, it arises when the multimodal decoder outputs an incorrect answer ˆy = arg max  
+
+> c∈C
+
+pmm (c | x, q, C)̸ = y∗, (3) and the selected distractor is more strongly favored by the text-only distribution than the correct answer, 
+
+ptxt ( ˆy | q, C) > ptxt (y∗ | q, C). (4) This failure is especially problematic when the correct answer receives substantial additional support from the image, yet that visually grounded signal is still insufficient to overcome the textual prior. Our goal is therefore to design a decoding rule that suppresses answer preference that can already be explained by text alone, while preserving answer preference that emerges only when the image is available. Before introducing our method, we first test whether successful scientific figure reasoning is associated with a measurable departure from the text-only prior. If our hypothesis is correct, then correct predictions should be those in which the image-conditioned answer distribution deviates meaningfully from what the model would prefer from text alone. 4Preprint. Under review. Multimodal 
+
+## Text -only  Candidate  score  with 
+
+# Text -only 
+
+0.8 
+
+2.8 
+
+1.4 
+
+Question 
+
+Figure 
+
+Choices  
+
+> :
+
+A, B, C 
+
+## Question 
+
+> Vision
+> Language
+> Model
+
+Candidate score with 
+
+# Multimodal  
+
+> X
+
+# 𝜶  
+
+> (𝟎 .𝟓 )
+
+3.0 
+
+3. 3
+
+0.9 
+
+- =0. 4 0.5  
+
+> 3.3
+> 1.4 1. 9
+> 3.0
+> 0.7
+> 2.3
+
+- =
+
+- =
+
+> 1.9
+> 0.5
+
+2.3 
+
+Candidate  score  with 
+
+# SciCon 
+
+> 0.9
+
+Choices  
+
+> :
+
+A, B, C 
+
+Figure 2: Illustration of S CI CON . Given a question and candidate answers, the model produces candidate scores under both multimodal and text-only inputs. S CI CON subtracts the text-only score, scaled by α, from the multimodal score so that candidates favored mainly by textual prior are suppressed and visually grounded candidates are promoted. To test this, we use a standard greedy decoder and compute both pmm (c | x, q, C) and 
+
+ptxt (c | q, C) for each example. We then partition examples into correct and wrong groups according to whether the greedy prediction matches the gold answer, and compare the two distributions using Jensen–Shannon divergence, JS (pmm ∥ ptxt ) (5) and cosine similarity, cos (pmm , ptxt ). (6) Table 1 shows a consistent pattern across MAC, SciFIBench, and MMSci: correct predictions exhibit higher Jensen–Shannon divergence and lower cosine similarity than wrong predic-tions. In other words, successful predictions tend to move farther away from the text-only prior, whereas incorrect predictions remain more aligned with it. These results support our failure-mode hypothesis: many errors arise when the model does not move sufficiently far from text-only preference even when visual evidence is available. This observation motivates our decoding approach, which explicitly discounts text-only preference at inference time so that answers are favored only when they remain strong after visual grounding. 
+
+3.3 SciCon: Contrastive Decoding for Scientific Figure Multiple-Choice QA 
+
+For each question, we query the model under two contexts defined in Section 3.1: a multi-modal context that includes the scientific figure, and a text-only context in which the figure is removed. This yields two candidate-wise logits over the same answer set: 
+
+lmm (c) = logit θ (c | x, q, C), (7) 
+
+ltxt (c) = logit θ (c | q, C). (8) Here, lmm (c) measures the model’s preference for candidate c when both visual and textual evidence are available, whereas ltxt (c) measures the preference induced by the textual evidence only. 5Preprint. Under review.                                                                                  
+
+> Backbone Method MAC SciFIBench MMSci
+> ACC F1 ACC F1 ACC F1 Qwen 3.5 4B Greedy (Baseline) 69.72 70.75 46.20 44.93 38.83 19.41 VCD 68.50 68.77 45.40 44.00 40.85 26.58
+> ICD 58.41 58.57 40.50 38.23 33.79 14.83
+> SCI CON (Ours) 74.01 74.24 48.70 46.99 43.44 19.06 Qwen 3.5 9B Greedy (Baseline) 81.35 81.40 55.10 54.67 46.54 27.34 VCD 81.96 81.92 55.90 55.55 49.29 32.35 ICD 81.04 81.01 53.00 52.13 46.65 24.14
+> SCI CON (Ours) 82.26 82.34 58.00 57.55 52.14 33.91
+> Phi-3.5-vision-instruct Greedy (Baseline) 42.81 42.02 48.60 48.47 47.78 34.43 VCD 43.73 43.27 53.50 53.75 51.95 34.59
+> ICD 42.81 41.60 47.10 46.86 46.32 31.38
+> SCI CON (Ours) 49.54 49.89 54.90 55.02 52.71 29.93
+
+Table 2: Main results on scientific figure QA benchmarks. We compare S CI CON with greedy decoding and contrastive baselines (VCD and ICD) across Qwen 3.5 4B, Qwen 3.5 9B, and Phi-3.5-vision-instruct backbones. Performance is reported in accuracy (ACC) and macro-F1. The best result for each metric is highlighted in bold .SCI CON then adjusts the final decision by explicitly discounting the text-only preference from the multimodal logit: 
+
+lsc (c) = lmm (c) − α ltxt (c), (9) where α > 0 controls the strength of prior suppression. The final prediction is then given by ˆy = argmax 
+
+> c∈C
+
+lsc (c). (10) This decoding rule favors candidates whose support cannot be explained by text alone. A distractor that is attractive primarily because it is linguistically plausible receives a lower contrastive score, whereas an answer that remains strong after subtracting the text-only preference is more likely to reflect genuine visual grounding. 
+
+# 4 Experiments 
+
+4.1 Benchmarks 
+
+We evaluate the effectiveness of our method on three representative scientific multimodal MCQA benchmarks, which require high-level visual reasoning and domain-specific knowl-edge: • MAC (Jiang et al., 2025) : MAC is constructed from scientific journal cover images drawn from venues such as Cell , Nature , Science , and ACS journals, spanning domains including biology, medicine, chemistry, and materials science. Compared with conventional figure QA benchmarks, it focuses on visually rich cover images paired with scientific narratives, making it suitable for evaluating abstract and high-level scientific visual understanding. • SciFIBench (Roberts et al., 2024) : SciFIBench consists of scientific figures paired with textual descriptions across both computer science and broader scientific do-mains, including areas such as computer vision, AI, machine learning, physics, mathematics, and quantitative biology. Its figures are accompanied by hard distrac-tors, making the benchmark particularly challenging for evaluating fine-grained figure–text grounding. • MMSci (Li et al., 2024b) : MMSci is a broad scientific multimodal benchmark cov-ering five major categories and 72 subjects, including physical sciences, earth and 6Preprint. Under review.                               
+
+> Category NGreedy ICD VCD SCI CON
+> Biological sciences 2062 44.23 45.25 48.93 51.16
+> Physical sciences 1039 49.95 48.22 50.05 53.61
+> Health sciences 330 49.09 47.27 50.30 53.03
+> Earth and environmental sciences 246 50.00 51.22 50.41 54.47
+> Scientific community and society 34 32.35 44.12 29.41 41.18
+
+Table 3: Category-wise accuracy (%) on MMSci with the Qwen3.5-9B backbone. S CI CON 
+
+achieves the highest accuracy in four of the five scientific categories, while ICD performs best in Scientific community and society. environmental sciences, biological sciences, and health. It contains diverse scien-tific figure types and associated textual contexts, making it useful for evaluating scientific figure understanding across heterogeneous domains and visual formats. 
+
+4.2 Experimental Setup Backbone Models To demonstrate the generalizability of our approach across model scales and architectures, we use three vision-language backbones: Qwen 3.5 4B , Qwen 3.5 9B ,and Phi-3.5-vision-instruct . The Qwen models provide two different scale settings, while Phi-3.5-vision-instruct offers an additional architecture with strong visual and instruction-following capabilities. 
+
+Baselines We compare S CI CON against one standard decoding baseline and two con-trastive decoding methods: • Greedy Decoding : The standard decoding strategy that directly selects the candi-date with the highest model score under the original multimodal context, without any explicit correction for textual prior bias. It serves as the main non-contrastive baseline. • VCD (Leng et al., 2024) : Visual Contrastive Decoding suppresses language-prior-driven predictions by contrasting the original image-conditioned output with the output obtained from a degraded visual input, such as a blurred or distorted image. The underlying idea is that candidates whose scores remain high even when visual information is corrupted are less likely to be genuinely grounded in the image. • ICD (Wang et al., 2024b) : Instruction Contrastive Decoding reduces hallucinations by contrasting the original output distribution with a distribution induced by distur-bance instructions, which are designed to exacerbate hallucination in multimodal reasoning. By discounting concepts that are overly sensitive to such disturbed instructions, ICD suppresses unsupported predictions and improves alignment with the visual evidence. 
+
+Implementation Details Performance is evaluated using Accuracy and Macro-F1 to ac-count for potential class imbalance across benchmarks. We provide the formal definition of Macro-F1 in Appendix A.1. For VCD and ICD, we adopt the default hyperparameter settings from the original implementations without additional tuning. For S CI CON , we use α = 0.5 as the default setting throughout the main experiments. This choice is rank-equivalent to the default VCD/ICD coefficient setting, and therefore yields the same effective weighting ratio between the original and contrastive branches. Further details on the hyperparameter settings of VCD, ICD, and S CI CON , as well as S CI CON ’s sensitivity to α, are provided in Appendix A.3. 
+
+4.3 Experimental Results 
+
+Table 2 summarizes the main results. Across all three benchmarks and all three backbone models, S CI CON achieves the best accuracy in every case. The gains are especially clear with 7Preprint. Under review.    
+
+> Name Definition Interpretation Gold uplift lsc
+
+(y∗) − lmm (y∗) The extent to which the contrastive decoder raises the gold option relative to the original image-conditioned branch. Visual evidence margin 
+
+> lmm
+
+(y∗) − ltxt (y∗) The extent to which the multimodal branch supports the gold answer more strongly than the text-only branch. Positive values indicate gold-specific visual evidence. Text-prior gold hit 1[argmax ptxt = y∗] 
+
+> averaged over a group Whether the text-only branch already ranks the gold answer first. High values indicate that the text prior is already informative. Prior alignment cos
+
+(pmm , ptxt ) The similarity between the multimodal and text-only answer distributions. Higher values indicate that the multimodal branch remains close to the text prior. 
+
+Table 4: Definitions of the four diagnostic quantities used in the analysis. Phi-3.5-vision-instruct, where S CI CON improves over greedy decoding on MAC, SciFIBench, and MMSci, while also surpassing the strong VCD baseline on all three benchmarks. Similar improvements are observed for both Qwen 3.5 4B and Qwen 3.5 9B. Macro-F1 follows the same overall trend on MAC and SciFIBench, where S CI CON performs best across all backbones. MMSci is the main exception: VCD yields higher macro-F1 for Qwen 3.5 4B and Phi-3.5-vision-instruct despite lower accuracy. We hypothesize that this discrepancy is related to the highly imbalanced gold answer-label distribution in MMSci. As shown in Appendix A.5, MMSci has both a long-tailed answer-label distribution and highly variable candidate counts. Under this imbalance, gains on frequent labels can substantially improve overall accuracy, while limited gains on rare labels may constrain macro-F1. Table 3 reports category-wise results on MMSci. S CI CON attains the best accuracy in four of the five categories, with particularly strong improvements in Biological sciences and Earth and environmental sciences. Scientific community and society is the only category where ICD slightly outperforms S CI CON .Overall, the category-wise analysis supports the effectiveness of text-prior subtraction across diverse scientific domains, while indicating that the influence of textual priors is not uniform across categories. 
+
+# 5 Analysis 
+
+To better understand how S CI CON changes prediction behavior, we analyze the answer distributions produced by the Qwen3.5-4B model. Table 4 defines the four diagnostic quantities used throughout this section. 
+
+5.1 Main mechanism: gold-answer recovery 
+
+The clearest and most consistent pattern across datasets is gold-answer recovery . Table 5 compares two groups of examples: corrected cases, where the baseline is wrong but S CI CON 
+
+is correct, and harmed cases, where the baseline is correct but S CI CON becomes wrong. In corrected cases, the gold uplift is strongly positive on all three datasets. This indicates that SCI CON explicitly increases the score of the gold answer relative to the original multimodal branch. At the same time, the visual evidence margin is also large and positive, showing that the image-conditioned branch already contains substantially stronger support for the gold answer than the text-only branch. By contrast, harmed cases exhibit little or even negative gold-specific visual advantage. Their visual evidence margin is close to zero or below zero across datasets, suggesting that 8Preprint. Under review.           
+
+> Dataset Gold uplift (corrected) Visual evidence margin (corrected) Visual evidence margin (harmed) MAC 1.568 2.088 0.013 SciFIBench 1.273 1.171 -0.054 MMSci 1.301 1.197 -0.189
+
+Table 5: Gold-answer recovery is the primary mechanism behind S CI CON . Corrected cases show large gold uplift and strong visual evidence margins, whereas harmed cases show little (or negative) gold-specific visual advantage.           
+
+> Dataset Text-prior gold hit (corrected) Text-prior gold hit (harmed) Prior alignment (harmed) MAC 0.103 0.733 0.846 SciFIBench 0.000 0.739 0.887 MMSci 0.012 0.798 0.896
+
+Table 6: When S CI CON helps and when it hurts. Corrected cases arise when the text prior is misleading, whereas harmed cases arise when the text prior is already aligned with the gold answer. the multimodal branch provides little additional evidence for the gold answer beyond what is already present in the text prior. Overall, these results indicate that S CI CON mainly helps by recovering gold answers when visual evidence is present but underutilized, whereas failures tend to arise when such visual support is weak. 
+
+5.2 When prior subtraction helps and when it hurts 
+
+Table 6 further clarifies the regime in which prior subtraction is beneficial. In corrected cases, the text-prior gold hit is extremely low. In other words, the text-only branch almost never identifies the correct answer in the very examples that S CI CON successfully fixes. These are precisely the cases where the text prior is misleading, and subtracting it allows the model to rely more on visual evidence. The harmed cases show the opposite pattern. Here, the text-prior gold hit is high. This means that the text-only prior is already well aligned with the correct answer. These examples also exhibit high prior alignment, indicating that the multimodal branch remains close to the text prior. In this regime, aggressive prior subtraction can remove useful information and occasionally turn a correct prediction into an error. 
+
+# 6 Limitations 
+
+SCI CON is most effective when visual evidence provides a strong signal that diverges from the text prior. However, when visual evidence is ambiguous, subtracting the text prior can be counterproductive—especially if the prior already points to the correct answer. In addition, our evaluation is limited to scientific figure multiple-choice QA, so its effectiveness in broader open-ended scientific multimodal reasoning remains to be validated. Furthermore, while S CI CON demonstrates robust performance with a fixed subtraction weight, the optimal value of α varies slightly across different scientific domains. This suggests that the degree of choice-induced prior bias is not uniform, and a static coefficient may not capture the nuances of every specialized dataset. Additionally, our current formulation is specifically tailored to the multiple-choice regime; extending this contrastive approach to open-ended generative scientific QA remains a subject for future investigation. 9Preprint. Under review. 
+
+# 7 Conclusion 
+
+We introduced S CI CON , a training-free contrastive decoder for scientific figure MCQA that subtracts text-only answer preferences from image-conditioned scores. Across three benchmarks, this simple approach consistently improves accuracy over greedy decoding and strong contrastive baselines. Our analysis confirms that S CI CON excels at gold-answer recovery by prioritizing visual evidence over linguistic biases. These findings demonstrate that decoding against the answer-text prior is a practical and effective strategy for grounding multimodal scientific reasoning. Beyond its performance gains, S CI CON offers a more computationally efficient alternative to existing contrastive methods by requiring only one additional text-only prefill pass instead of a second multimodal pass. This efficiency makes it a practical candidate for deployment in real-time scientific assistant systems that demand both high accuracy and low latency. Future work will focus on developing adaptive mechanisms to dynamically adjust prior suppression based on the model’s internal confidence in the visual evidence. 
+
+# References 
+
+Shubham Agarwal, Gaurav Sahu, Abhay Puri, Issam H. Laradji, Krishnamurthy DJ Dvi-jotham, Jason Stanley, Laurent Charlin, and Christopher Pal. Litllm: A toolkit for scientific literature review, 2025. URL https://arxiv.org/abs/2402.01788 .Aishwarya Agrawal, Jiasen Lu, Stanislaw Antol, Margaret Mitchell, C. Lawrence Zitnick, Dhruv Batra, and Devi Parikh. Vqa: Visual question answering, 2016. URL https: //arxiv.org/abs/1505.00468 .Md. Atabuzzaman, Ali Asgarov, and Chris Thomas. Benchmarking and mitigating mcqa selection bias of large vision-language models, 2025. URL https://arxiv.org/abs/2509. 16805 .Jinheon Baek, Sujay Kumar Jauhar, Silviu Cucerzan, and Sung Ju Hwang. Researchagent: Iterative research idea generation over scientific literature with large language models, 2025. URL https://arxiv.org/abs/2404.07738 .Nishant Balepur, Abhilasha Ravichander, and Rachel Rudinger. Artifacts or abduction: How do llms answer multiple-choice questions without the question?, 2024. URL https: //arxiv.org/abs/2402.12483 .Ting-Yao Hsu, C. Lee Giles, and Ting-Hao ’Kenneth’ Huang. Scicap: Generating captions for scientific figures, 2021. URL https://arxiv.org/abs/2110.11624 .Drew A. Hudson and Christopher D. Manning. Gqa: A new dataset for real-world visual reasoning and compositional question answering, 2019. URL https://arxiv.org/abs/ 1902.09506 .Mohan Jiang, Jin Gao, Jiahao Zhan, and Dequan Wang. Mac: A live benchmark for multi-modal large language models in scientific understanding. arXiv preprint arXiv:2508.15802 ,2025. Sicong Leng, Hang Zhang, Guanzheng Chen, Xin Li, Shijian Lu, Chunyan Miao, and Lidong Bing. Mitigating object hallucinations in large vision-language models through visual contrastive decoding. arXiv preprint arXiv:2311.16922 , 2024. Chunyuan Li, Cliff Wong, Sheng Zhang, Naoto Usuyama, Haotian Liu, Jianwei Yang, Tristan Naumann, Hoifung Poon, and Jianfeng Gao. Llava-med: Training a large language-and-vision assistant for biomedicine in one day, 2023. URL https://arxiv.org/abs/2306. 00890 .Lei Li, Yuqi Wang, Runxin Xu, Peiyi Wang, Xiachong Feng, Lingpeng Kong, and Qi Liu. Multimodal arxiv: A dataset for improving scientific comprehension of large vision-language models, 2024a. URL https://arxiv.org/abs/2403.00231 .10 Preprint. Under review. Zekun Li, Xianjun Yang, Kyuri Choi, Wanrong Zhu, Ryan Hsieh, HyeonJung Kim, Jin Hyuk Lim, Sungyoung Ji, Byungju Lee, Xifeng Yan, Linda Ruth Petzold, Stephen D. Wilson, Woosang Lim, and William Yang Wang. Mmsci: A dataset for graduate-level multi-discipline multimodal scientific understanding. arXiv preprint arXiv:2407.04903 , 2024b. Tsung-Yi Lin, Michael Maire, Serge Belongie, Lubomir Bourdev, Ross Girshick, James Hays, Pietro Perona, Deva Ramanan, C. Lawrence Zitnick, and Piotr Dollár. Microsoft coco: Common objects in context, 2015. URL https://arxiv.org/abs/1405.0312 .Alejandro Lozano, Min Woo Sun, James Burgess, Liangyu Chen, Jeffrey J Nirschl, Jeffrey Gu, Ivan Lopez, Josiah Aklilu, Austin Wolfgang Katzer, Collin Chiu, Anita Rau, Xiaohan Wang, Yuhui Zhang, Alfred Seunghoon Song, Robert Tibshirani, and Serena Yeung-Levy. Biomedica: An open biomedical image-caption archive, dataset, and vision-language models derived from scientific literature, 2025. URL https://arxiv.org/abs/2501.07171 .Tiange Luo, Ang Cao, Gunhee Lee, Justin Johnson, and Honglak Lee. Probing visual language priors in VLMs. arXiv preprint arXiv:2501.00569 , 2025. Sean O’Brien and Mike Lewis. Contrastive decoding improves reasoning in large language models. arXiv preprint arXiv:2309.09117 , 2023. Yeji Park, Deokyeong Lee, Junsuk Choe, and Buru Chang. Convis: Contrastive decod-ing with hallucination visualization for mitigating hallucinations in multimodal large language models, 2024. URL https://arxiv.org/abs/2408.13906 .Jonathan Roberts, Kai Han, Neil Houlsby, and Samuel Albanie. Scifibench: Bench-marking large multimodal models for scientific figure interpretation. arXiv preprint arXiv:2405.08807 , 2024. Samuel Schmidgall, Yusheng Su, Ze Wang, Ximeng Sun, Jialian Wu, Xiaodong Yu, Jiang Liu, Michael Moor, Zicheng Liu, and Emad Barsoum. Agent laboratory: Using llm agents as research assistants, 2025. URL https://arxiv.org/abs/2501.04227 .Xiaoxiao Sun, Mingyang Li, Kun Yuan, Min Woo Sun, Mark Endo, Shengguang Wu, Changlin Li, Yuhui Zhang, Zeyu Wang, and Serena Yeung-Levy. Do VLMs perceive or recall? probing visual perception vs. memory with classic visual illusions. arXiv preprint arXiv:2601.22150 , 2026. An Vo, Khai-Nguyen Nguyen, Mohammad Reza Taesiri, Vy Tuong Dang, Anh Totti Nguyen, and Daeyoung Kim. Vision language models are biased. arXiv preprint arXiv:2505.23941 ,2025. Haochun Wang, Sendong Zhao, Zewen Qiang, Nuwa Xi, Bing Qin, and Ting Liu. Llms may perform mcqa by selecting the least incorrect option, 2024a. URL https://arxiv.org/ abs/2402.01349 .Xintong Wang, Jingheng Pan, Liang Ding, and Chris Biemann. Mitigating hallucinations in large vision-language models with instruction contrastive decoding. arXiv preprint arXiv:2403.18715 , 2024b. Chujie Zheng, Hao Zhou, Fandong Meng, Jie Zhou, and Minlie Huang. Large language models are not robust multiple choice selectors, 2024. URL https://arxiv.org/abs/2309. 03882 .
+
+# A Additional Experimental Details 
+
+A.1 Evaluation Metrics 
+
+We report both Accuracy and Macro-F1 . Accuracy measures the proportion of correctly answered multiple-choice questions over the entire evaluation set. Macro-F1 is included as a complementary class-balanced metric to account for potential imbalance in answer labels across benchmarks. 11 Preprint. Under review.                                        
+
+> αMAC SciFIBench MMSci Accuracy F1 Accuracy F1 Accuracy F1 0.1 74.01 74.18 47.80 46.79 40.85 21.98 0.3 74.01 74.23 49.00 47.79 42.09 23.07 0.5 (Default) 74.01 74.24 48.70 46.99 43.44 19.06 0.7 74.62 74.76 48.30 46.66 44.46 18.39 0.9 73.39 73.54 47.10 45.45 43.41 16.25
+
+Table 7: Hyperparameter sensitivity of S CI CON with respect to the subtraction weight α on Qwen3.5-4B. Performance is generally stable across a broad range of α values, although the best setting varies slightly by dataset. Formally, let C denote the set of answer classes (e.g., A/B/C/D). For each class c ∈ C, we compute precision and recall as Precision c = TP c
+
+TP c + FP c
+
+, Recall c = TP c
+
+TP c + FN c
+
+,where TP c, FP c, and FN c denote the numbers of true positives, false positives, and false negatives for class c, respectively. The class-wise F1 score is then F1 c = 2 · Precision c · Recall c
+
+Precision c + Recall c
+
+.Macro-F1 is defined as the unweighted average across classes: Macro-F1 = 1
+
+|C| ∑
+
+> c∈C
+
+F1 c.Following standard practice, if the denominator of precision or recall is zero for a class, the corresponding term is treated as zero. 
+
+A.2 Jensen–Shannon Divergence 
+
+To quantify the discrepancy between answer preferences induced by different input condi-tions, we measure the Jensen–Shannon divergence (JSD) between two answer distributions. In our setting, these correspond to the answer distribution produced by the text-only model and that produced by the multimodal model. Given two discrete probability distributions P and Q over the same answer set, the Jensen– Shannon divergence is defined as JSD (P ∥ Q) = 12 KL (P ∥ M) + 12 KL (Q ∥ M),where 
+
+M = 12 (P + Q),and KL (· ∥ · ) denotes the Kullback–Leibler divergence: KL (P ∥ M) = ∑
+
+> i
+
+P(i) log P(i)
+
+M(i) .JSD is a symmetric and bounded measure of distributional difference. A lower JSD indicates that the two answer distributions are more similar, while a higher JSD indicates a larger discrepancy. In our analysis, lower JSD between the text-only and multimodal answer distributions suggests that the multimodal model remains closer to the text-only preference, consistent with stronger dominance of textual priors. 12 Preprint. Under review. 
+
+A.3 Hyperparameter Details 
+
+We use the default hyperparameter settings from the released implementations of VCD and ICD. In both baselines, contrastive decoding is performed at the candidate-logit level. For VCD, the candidate score can be written as 
+
+sVCD (y) = lorig (y) + α lorig (y) − lnoisy (y), (11) where lorig (y) denotes the logit of candidate y under the original image-question input, and 
+
+lnoisy (y) denotes the corresponding logit under a noise-corrupted image. With the default setting α = 1.0, this becomes 
+
+sVCD (y) = lorig (y) +  lorig (y) − lnoisy (y). (12) For ICD, the candidate score can be written as 
+
+sICD (y) = lorig (y) + α lorig (y) − ldist (y), (13) where lorig (y) denotes the logit of candidate y under the original multimodal prompt, and 
+
+ldist (y) denotes the corresponding logit under a disturbed instruction prompt. With the default setting α = 1.0, this becomes 
+
+sICD (y) = lorig (y) +  lorig (y) − ldist (y). (14) SCI CON follows the same contrastive intuition, but uses a simpler subtraction rule: 
+
+sSciCon (y) = lmm (y) − α ltxt (y), (15) where lmm (y) and ltxt (y) denote the candidate logits under the multimodal and text-only inputs, respectively. Unless otherwise noted, we use α = 0.5 in the main experiments, yielding 
+
+sSciCon (y) = lmm (y) − 0.5 ltxt (y). (16) Under argmax decoding, this default S CI CON form is rank-equivalent to 2 lmm (y) − ltxt (y), (17) matching the effective original-to-contrastive weighting ratio used by default VCD/ICD. 
+
+A.4 Impact of hyperparameter α on Performance 
+
+We further analyze the sensitivity of S CI CON to the subtraction weight α on the Qwen3.5-4B backbone. As shown in Table 7, performance remains reasonably stable across a broad range of α values, although the best setting varies somewhat by dataset. The best results are obtained at α = 0.7 on MAC, α = 0.3 on SciFIBench, and α = 0.7 in accuracy on MMSci, while MMSci macro-F1 peaks at α = 0.3. Overall, these results suggest that S CI CON is not overly sensitive to the exact choice of α, and that α = 0.5 provides a reasonable default trade-off for the main experiments. 
+
+A.5 Answer-Label and Candidate-Count Distributions 
+
+To better understand the discrepancy between accuracy and macro-F1 on MMSci, we report the distributions of gold answer labels and candidate counts for all three benchmarks. As shown in Tables 8 and 9, MAC and SciFIBench have fixed candidate counts and relatively balanced gold answer-label distributions, whereas MMSci exhibits both a highly imbalanced answer-label distribution and large variation in the number of candidate choices. This observation is consistent with the gap between accuracy and macro-F1 on MMSci discussed in the main text. 13 Preprint. Under review.                           
+
+> Dataset Gold answer label distribution
+> MAC A: 78, B: 89, C: 73, D: 87 SciFIBench A: 188, B: 221, C: 180, D: 200, E: 211 MMSci A: 963, B: 941, C: 826, D: 773, E: 76, F: 63, G: 22, H: 21, I: 14, J: 2, K: 4, L: 1, M: 1, N:2, O: 1, V: 1
+
+Table 8: Distribution of gold answer labels across datasets. MAC and SciFIBench are relatively balanced, while MMSci shows a long-tailed distribution concentrated on early option indices.     
+
+> Dataset Candidate count distribution (Count: Frequency)
+> MAC 4: 327 SciFIBench 5: 1000 MMSci 2: 103, 3: 115, 4: 2731, 5: 107, 6: 213, 7: 99, 8: 95, 9: 56, 10: 40, 11: 33, 12: 43, 13: 2, 14: 15, 15: 18, 16: 20, 17: 5, 18: 3, 20: 1, 21: 2, 23: 1, 24: 1, 25: 1, 26: 7
+
+Table 9: Distribution of candidate counts across datasets. MAC and SciFIBench use fixed numbers of answer choices, whereas MMSci contains a wide range of candidate counts. 
+
+# B Inference-Time Complexity Analysis 
+
+We provide a simple theoretical comparison of inference-time cost across decoding methods. Since all compared methods are training-free and differ mainly in the number and type of forward passes required at test time, their dominant cost can be analyzed at the level of Transformer prefill computation. Let Lq denote the number of text tokens in the question/prompt, and let Lv denote the number of visual tokens extracted from the input figure. For a Transformer forward pass over a sequence of length L, we approximate the prefill cost as 
+
+C(L) = O(L2d), (18) where d denotes the hidden-size scale factor. Under this approximation, a multimodal input has total length 
+
+Lmm = Lq + Lv, (19) while a text-only input has length 
+
+Ltxt = Lq. (20) Therefore, the cost of one multimodal forward pass and one text-only forward pass can be written as 
+
+Cmm = O
+
+
+
+(Lq + Lv)2d
+
+
+
+, Ctxt = O
+
+
+
+L2 
+
+> q
+
+d
+
+
+
+. (21) Greedy decoding requires only a single forward pass on the original multimodal input: 
+
+CGreedy = O
+
+
+
+(Lq + Lv)2d
+
+
+
+. (22) VCD and ICD each require an additional contrastive branch besides the original multimodal branch. Assuming the degraded-image branch in VCD and the disturbed-input branch in ICD have approximately the same token length as the original multimodal input, their costs are 
+
+CVCD ≈ O
+
+
+
+2(Lq + Lv)2d
+
+
+
+, CICD ≈ O
+
+
+
+2(Lq + Lv)2d
+
+
+
+. (23) In contrast, S CI CON uses one multimodal forward pass and one text-only forward pass: 
+
+CSCI CON = O
+
+
+
+(Lq + Lv)2d + L2 
+
+> q
+
+d
+
+
+
+. (24) 14 Preprint. Under review. Since 
+
+L2 
+
+> q
+
+< (Lq + Lv)2 for Lv > 0, (25) it follows that 
+
+CGreedy < CSCI CON < CVCD ≈ CICD . (26) Thus, while S CI CON incurs additional inference cost relative to greedy decoding, it is theo-retically more efficient than contrastive decoding methods that require two full multimodal forward passes. 
+
+# C Case Study: Gold-Answer Recovery 
+
+In this section, we provide a qualitative analysis of a successful case from the MAC Bench-mark where the baseline greedy decoding fails due to strong choice-induced prior bias, but SCI CON successfully recovers the correct answer. 
+
+C.1 Gold-Answer Recovery in MAC 
+
+A B C D
+
+0
+
+0.5 
+
+1
+
+> 0.61
+> 0.37
+> 0.02
+> 0.01
+> 0.85
+> 0.01
+> 0.08
+> 0.06
+> 0.12
+> 0.87
+> 0.01
+> 0.01
+> Probability ( p)
+
+Comparison of Answer Distributions   
+
+> Multimodal Text-only SCI CON
+
+Question: Which of the following options best describe the cover image? 
+
+Correct Answer: B 
+
+• Option A: California is home to expansive, water-intensive industrial agriculture. As the state faced severe drought in the 2010s, industry remained buoyed by unjust water rights, while neighboring families suffered without access to water. The cover by Tali Weinberg transforms lush agricultural landscapes into drought-stricken fields. • Option B (Gold): Mangroves are crucial carbon sinks, yet these ecosystems are being lost rapidly, mainly due to aquaculture and shrimp farming. The cover highlights the restoration potential of lost mangroves in China and Southeast Asia. • Option C: Clean water is vital to planetary health, yet anthropogenic pressures threaten this resource. The cover shows the swirls of an algae bloom caused by agricultural runoff, with consequences for biodiversity and human health. • Option D: The inaugural issue of One Earth focuses on climate action, depicting the generation at risk from climate change and their engagement with the issue. 
+
+Figure 3: A MAC case where greedy decoding selects a text-prior-dominant distractor (Op-tion A). The text-only branch assigns overwhelming probability to A, and the multimodal branch remains biased toward the same incorrect choice. After subtracting the text-only prior, S CI CON suppresses A and recovers the visually grounded correct answer (Option B). 15 Preprint. Under review. Figure 3 illustrates a representative gold-answer recovery case on MAC. Greedy decoding selects option A because both the multimodal and text-only branches strongly favor it, indicating that the incorrect prediction is largely driven by textual plausibility rather than genuine visual grounding. In contrast, S CI CON suppresses this text-prior-dominant dis-tractor and shifts probability mass to the gold answer B, which becomes the top prediction after prior subtraction. This example highlights the central mechanism of S CI CON : when an incorrect option is attractive mainly because of text alone, contrastive prior subtraction can recover the visually supported answer. 
+
+C.2 Gold-Answer Recovery in SciFIBench 
+
+Scientific figure example A B C D E00.2 0.4 0.6 0.8 1
+
+> 0.4
+> 0.03
+> 0.52
+> 0.04
+> 0
+> 0
+> 0.02
+> 0.92
+> 0.04
+> 0.02
+> 0.87
+> 0.03
+> 0.07
+> 0.03
+> 0.01
+> Probability ( p)
+
+Comparison of Answer Distributions   
+
+> Multimodal Text-only SCI CON
+
+Question: Which caption best matches the image? 
+
+Correct Answer: A 
+
+• Option A (Gold): ρ = 0 case. Left panel depicts the conditional expectation function 
+
+E{E[Ri | X1i = y, X2i ]} as a function of y, when ρ = 0. The observable relationship between 
+
+R and income reflects the true negative effect β1. The right panel reports regression results on a simulated dataset of 10,000 observations. • Option B: ρ = 1 case. The regression results reflect a spurious positive association between income and reported satisfaction, and Column (3) reports an infeasible direct regression recovering the true parameters. • Option C: Mean response Ri versus income X1i, comparing ρ = 0 and ρ = 1; the right panel reflects a spurious upward slope under correlated reporting heterogeneity. • Option D: ρ = 0 case with a lowess regression of R on income in a simulated dataset of 10,000 observations. • Option E: Radial case with d = 2 and m = 1, analyzing αrad, (n=0) 
+
+> ⋆
+
+(p) and Λrad, (n=0) 
+
+> D
+
+(α, p).
+
+Figure 4: A representative SciFIBench case where the text-only branch assigns overwhelming probability to a scientifically plausible distractor (Option C, p = 0.918), and the multimodal branch follows the same incorrect preference. By subtracting this text-only answer bias, SCI CON shifts probability mass toward the visually grounded correct answer and recovers Option A ( p = 0.870). 
+
+Analysis: As shown in Figure 4, the text-only branch strongly prefers Option C ( ptxt (C) = 
+
+0.918), likely because it provides a compact and scientifically coherent summary of the 16 Preprint. Under review. visual comparison shown in the figure. The multimodal branch remains closely aligned with this textual prior and incorrectly predicts Option C ( pmm (C) = 0.519), despite assigning substantial probability to the gold answer A ( pmm (A) = 0.404). After subtracting the text-only preference, S CI CON sharply suppresses the text-driven distractor and recovers the correct answer, assigning the highest probability to Option A ( psc (A) = 0.870). This example illustrates that even when the multimodal model contains useful visual evidence, its final decision can still be dominated by a strong text prior unless that prior is explicitly corrected. 
+
+C.3 Gold-Answer Recovery in MMSci 
+
+Figure 1 shows a representative MMSci example where greedy decoding fails because both the multimodal and text-only branches strongly prefer the same distractor. This indicates that the multimodal prediction is dominated by textual prior rather than visual grounding. By subtracting the text-only prior, S CI CON suppresses the distractor and recovers the correct answer. 
+
+# D Detailed Results on SciFIBench Categories 
+
+To provide a more granular understanding of model performance, we report the accuracy breakdown across all individual sub-categories of SciFIBench. While the main text focuses on aggregate performance, this detailed view illustrates how different decoding strategies interact with the unique visual and linguistic characteristics of diverse scientific disciplines. The General Science subset encompasses a wide range of fields, from quantitative biology (q-bio) and economics (econ) to theoretical physics. Across these varied domains, we observe that S CI CON generally maintains superior performance compared to both greedy decoding and other contrastive baselines. This consistency suggests that the tendency of multimodal models to over-rely on linguistic priors is a widespread phenomenon across scientific literature, and that our approach of explicitly subtracting the text-only prior is robust to differences in domain-specific terminology. In the Computer Science (CS) subset, which includes specialized fields such as Computer Vision (cs.CV), Cryptography (cs.CR), and Machine Learning (cs.LG), the performance shows higher variance across different sub-categories. While S CI CON achieves the highest overall accuracy for the CS group, certain baselines occasionally show strengths in specific niche areas. These results highlight the inherent complexity of scientific figure reasoning, where the optimal decoding strategy may be influenced by the specific symbolic conventions and structural layouts unique to each sub-field. Overall, the category-wise results reinforce the claim that S CI CON provides a more reliable grounding in visual evidence across the broad spectrum of scientific research. 17 Preprint. Under review. 
+
+Group Category N Greedy ICD VCD SCI CON 
+
+General Science 
+
+General q-bio 77 41.56 44.16 40.26 44.16 
+
+General econ 79 62.03 55.70 54.43 63.29 
+
+General q-fin 75 65.33 60.00 64.00 66.67 
+
+General stat 61 72.13 73.77 73.77 73.77 
+
+General eess 77 48.05 50.65 48.05 49.35 General math 52 48.08 48.08 48.08 51.92 
+
+General physics 79 75.95 77.22 75.95 78.48 
+
+General overall 500 59.20 58.60 57.80 61.20 
+
+Computer Science (CS) 
+
+CS cross-list 133 49.62 44.36 51.13 51.88 
+
+CS other cs 132 46.97 49.24 52.27 54.55 
+
+CS cs.CR 25 80.00 64.00 84.00 76.00 CS cs.DC 25 44.00 44.00 48.00 56.00 
+
+CS cs.CV 25 48.00 44.00 56.00 52.00 CS cs.RO 25 52.00 44.00 48.00 56.00 
+
+CS cs.SE 25 48.00 60.00 56.00 60.00 
+
+CS cs.NI 25 64.00 44.00 60.00 60.00 CS cs.SY 25 52.00 44.00 48.00 44.00 CS cs.LG 25 56.00 52.00 64.00 60.00 CS cs.CL 25 56.00 48.00 56.00 56.00 
+
+CS cs.AI 10 20.00 20.00 30.00 30.00 
+
+CS overall 500 51.00 47.40 54.00 54.80 
+
+Table 10: Detailed category-wise accuracy (%) on SciFIBench with the Qwen3.5-9B backbone. SciFIBench consists of two subsets: General Science and Computer Science (CS). S CI CON 
+
+achieves the best overall accuracy in both subsets, while performance on individual cate-gories varies by baseline. 18
